@@ -1,0 +1,3 @@
+C:/Users/Codrut/Desktop/Anul 2/Sem2/DP/XO/cmake-build-debug/CMakeFiles/XO.dir
+C:/Users/Codrut/Desktop/Anul 2/Sem2/DP/XO/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Codrut/Desktop/Anul 2/Sem2/DP/XO/cmake-build-debug/CMakeFiles/rebuild_cache.dir
