@@ -62,4 +62,18 @@ void Game::checkGameState() {
 void Game::changeTurn() {
     this->xTurn = !this->xTurn;
     this->nrOfTurns++;
+    checkGameState(); //verificam daca dupa ulima modificare a matricei board exista castigator
+}
+
+void Game::placeSymbol(int l, int c) {
+    if(board[l][c]!=-1)
+        return;
+    board[l][c] = xTurn;
+    changeTurn();
+}
+
+bool Game::positionIsTouched(int l, int c) {
+    if(board[l][c]!=-1)
+        return false;
+    return true;
 }
