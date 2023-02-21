@@ -11,6 +11,8 @@
  *  daca board[l][c]==0 insemana ca acolo se afla 0
  *  functia checkGameState verifica daca exista winner, ar trebui apelata la fiecare modificare a matricei board
  *  avem o variabila nrOfTurns - retine cate tururi s-au jucat - daca s-au jucat 9 tururi si nu a fost gasit castigator inseamna ca avem DRAW
+ *
+ *  scriu acest comentariu ca sa fac un commit de test fiindca am o problema cu usernamenul
  */
 
 class Game {
