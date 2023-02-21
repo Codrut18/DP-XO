@@ -38,7 +38,67 @@ void Engine::input() {
 }
 
 void Engine::draw() {
-    window.clear(Color::Black);
+    window.clear(Color::Yellow);
+
+    drawBoard();
+    //drawOShape(100,100,10);
+    drawXShape(300,200,80);
 
     window.display();
 }
+
+void Engine::drawBoard() {
+
+    const int WINDOW_WIDTH = 800;
+    const int WINDOW_HEIGHT = 600;
+
+    int tableX = (WINDOW_WIDTH - 300) / 2;
+    int tableY = (WINDOW_HEIGHT - 300) / 2;
+
+    for (int row = 0; row < 3; row++) {
+        for (int col = 0; col < 3; col++) {
+            if ((row + col) % 2 == 0) {
+                sf::RectangleShape square(sf::Vector2f(100, 100));
+                square.setFillColor(sf::Color::White);
+                square.setOutlineThickness(2);
+                square.setOutlineColor(sf::Color::Black);
+                square.setPosition(tableX + col * 100, tableY + row * 100);
+                window.draw(square);
+            } else {
+                sf::RectangleShape square(sf::Vector2f(100, 100));
+                square.setFillColor(sf::Color::White);
+                square.setOutlineThickness(2);
+                square.setOutlineColor(sf::Color::Black);
+                square.setPosition(tableX + col * 100, tableY + row * 100);
+                window.draw(square);
+            }
+        }
+    }
+}
+
+void Engine::drawOShape(float x, float y, float size) {
+
+    sf::CircleShape oShape(40);
+    oShape.setScale(1,1.15);
+    oShape.setOutlineColor(sf::Color::Red);
+    oShape.setOutlineThickness(5);
+
+    window.draw(oShape);
+}
+
+void Engine::drawXShape(float x, float y, float size) {
+    sf::RectangleShape line1(sf::Vector2f(size, 5));
+    line1.setFillColor(sf::Color::Red);
+    line1.rotate(45);
+    line1.setPosition(x - size / 2 + 3, y - size / 2 + 23);
+
+    sf::RectangleShape line2(sf::Vector2f(size, 5));
+    line2.setFillColor(sf::Color::Red);
+    line2.rotate(-45);
+    line2.setPosition(x - size / 2, y + size / 2);
+
+    window.draw(line1);
+    window.draw(line2);
+}
+
+

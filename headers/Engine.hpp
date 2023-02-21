@@ -23,6 +23,10 @@ public:
 
     void draw();
 
+    void drawBoard();
+    void drawOShape(float x, float y, float size);
+    void drawXShape(float x, float y, float size);
+
     // The main loop will be in the run function
     void run();
 
