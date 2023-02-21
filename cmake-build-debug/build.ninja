@@ -63,6 +63,13 @@ build CMakeFiles/X_0.dir/src/Engine.cpp.obj: CXX_COMPILER__X_0_Debug D$:/FACULTA
   OBJECT_DIR = CMakeFiles\X_0.dir
   OBJECT_FILE_DIR = CMakeFiles\X_0.dir\src
 
+build CMakeFiles/X_0.dir/src/Game.cpp.obj: CXX_COMPILER__X_0_Debug D$:/FACULTATE/Facultate/An_2_sem_2/DP_DesignPattern/X_0/src/Game.cpp || cmake_object_order_depends_target_X_0
+  DEP_FILE = CMakeFiles\X_0.dir\src\Game.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++1z
+  INCLUDES = -ID:/FACULTATE/Facultate/An_2_sem_2/DP_DesignPattern/X_0/headers -ID:/FACULTATE/Facultate/An_2_sem_2/DP_DesignPattern/X_0/SFML/include -ID:/SFMLMingw/SFML/include
+  OBJECT_DIR = CMakeFiles\X_0.dir
+  OBJECT_FILE_DIR = CMakeFiles\X_0.dir\src
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target X_0
@@ -71,7 +78,7 @@ build CMakeFiles/X_0.dir/src/Engine.cpp.obj: CXX_COMPILER__X_0_Debug D$:/FACULTA
 #############################################
 # Link the executable X_0.exe
 
-build X_0.exe: CXX_EXECUTABLE_LINKER__X_0_Debug CMakeFiles/X_0.dir/src/main.cpp.obj CMakeFiles/X_0.dir/src/Engine.cpp.obj | D$:/SFMLMingw/SFML/lib/libsfml-system-d.a D$:/SFMLMingw/SFML/lib/libsfml-window-d.a D$:/SFMLMingw/SFML/lib/libsfml-graphics-d.a D$:/SFMLMingw/SFML/lib/libsfml-network-d.a D$:/SFMLMingw/SFML/lib/libsfml-audio-d.a
+build X_0.exe: CXX_EXECUTABLE_LINKER__X_0_Debug CMakeFiles/X_0.dir/src/main.cpp.obj CMakeFiles/X_0.dir/src/Engine.cpp.obj CMakeFiles/X_0.dir/src/Game.cpp.obj | D$:/SFMLMingw/SFML/lib/libsfml-system-d.a D$:/SFMLMingw/SFML/lib/libsfml-window-d.a D$:/SFMLMingw/SFML/lib/libsfml-graphics-d.a D$:/SFMLMingw/SFML/lib/libsfml-network-d.a D$:/SFMLMingw/SFML/lib/libsfml-audio-d.a
   FLAGS = -g
   LINK_LIBRARIES = D:/SFMLMingw/SFML/lib/libsfml-system-d.a  D:/SFMLMingw/SFML/lib/libsfml-window-d.a  D:/SFMLMingw/SFML/lib/libsfml-graphics-d.a  D:/SFMLMingw/SFML/lib/libsfml-network-d.a  D:/SFMLMingw/SFML/lib/libsfml-audio-d.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\X_0.dir

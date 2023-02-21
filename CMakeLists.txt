@@ -3,11 +3,11 @@ project(X_0)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(X_0 src/main.cpp headers/Engine.hpp src/Engine.cpp)
+add_executable(X_0 src/main.cpp headers/Engine.hpp src/Engine.cpp src/Game.h src/Game.cpp)
 
 include_directories(headers SFML/include)
 
-set(SFML_ROOT /SFML)
+set(SFML_ROOT libraries/SFML)
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake_modules")
 find_package(SFML REQUIRED system window graphics network audio)
 if (SFML_FOUND)
