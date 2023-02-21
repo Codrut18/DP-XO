@@ -18,8 +18,9 @@
 class Game {
 public:
     int board[3][3]={-1,-1,-1,-1,-1,-1,-1,-1,-1};
-    bool xTurn = false;
-    int nrOfTurns;
+    bool xTurn = true;
+    int nrOfTurns = 0;
+    bool gameActive = false;
 
     void checkGameState();
 
@@ -28,5 +29,12 @@ public:
     void placeSymbol(int l, int c);
 
     bool positionIsTouched(int l, int c);
+
+    void displayBoard();
+
+    void start();
+
+    void stopGame();
+
 };
 
