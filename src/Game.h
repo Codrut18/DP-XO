@@ -3,12 +3,12 @@
 
 class Game {
 public:
-    bool b[3][3];
+    int board[3][3];
     bool xTurn = false;
     int nrOfTurns;
 
     void checkGameState();
 
-    sf::RenderWindow mWindow;
+    void changeTurn();
 };
 
