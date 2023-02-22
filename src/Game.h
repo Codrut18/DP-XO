@@ -22,6 +22,8 @@ public:
     int nrOfTurns = 0;
     bool gameActive = false;
 
+    std::pair<int,int> generateRandomMove();
+
     void checkGameState();
 
     void changeTurn();

@@ -16,6 +16,16 @@ void UI::playGame() {
     game.gameActive = true;
 
     while (window.isOpen()) {
+
+        auto random_position = game.generateRandomMove();
+        if (game.xTurn == false && game.board[random_position.first][random_position.second] == -1 && game.gameActive == true)
+        {
+            game.checkGameState();
+            buttons[random_position.first][random_position.second].setTexture(&buttonTextures[2]);
+            game.board[random_position.first][random_position.second] = game.xTurn;
+            game.xTurn = true;
+        }
+
         sf::Event event;
         while (window.pollEvent(event)) {
             switch (event.type) {
@@ -35,13 +45,14 @@ void UI::playGame() {
                                         game.board[i][j] = game.xTurn;
                                         game.xTurn = false;
                                     }
-                                    if (game.xTurn == false && game.board[i][j] == -1)
+                                    //used if you want to play in 2 players
+                                    /*if (game.xTurn == false && game.board[i][j] == -1)
                                     {
                                         buttons[i][j].setTexture(&buttonTextures[2]);
                                         game.board[i][j] = game.xTurn;
                                         game.xTurn = true;
                                     }
-                                    game.checkGameState();
+                                    game.checkGameState();*/
                                     //std::cout << "Button (" << i << "," << j << ") clicked!\n";
                                 }
                             }

@@ -3,6 +3,8 @@
 //
 
 #include "Game.h"
+#include <random>
+#include <ctime>
 
 void Game::checkGameState() {
     for (int l = 0; l < 3; l++)
@@ -129,4 +131,25 @@ void Game::start() {
 
 void Game::stopGame() {
     gameActive = false;
+}
+
+std::pair<int, int> Game::generateRandomMove() {
+    std::pair<int, int> pozitie;
+
+    std::srand(std::time(0));
+    int random_number = std::rand() % 9;
+
+    pozitie.first = random_number/3;
+    pozitie.second = random_number%3;
+
+    while(board[pozitie.first][pozitie.second] != -1)
+    {
+        random_number = std::rand() % 9;
+
+        pozitie.first = random_number/3;
+        pozitie.second = random_number%3;
+    }
+
+    //std::cout<<pozitie.first<<" "<<pozitie.second;
+    return pozitie;
 }
