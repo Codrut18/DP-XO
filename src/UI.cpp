@@ -13,6 +13,8 @@ void UI::playGame() {
 
     gameBoard();
 
+    game.gameActive = true;
+
     while (window.isOpen()) {
         sf::Event event;
         while (window.pollEvent(event)) {
@@ -21,15 +23,26 @@ void UI::playGame() {
                     window.close();
                     break;
                 case sf::Event::MouseButtonPressed:
-                    if (event.mouseButton.button == sf::Mouse::Left) {
+                    if (event.mouseButton.button == sf::Mouse::Left && game.gameActive == true) {
                         // Check if a button was clicked
                         for (int i = 0; i < TABLE_HEIGHT; i++) {
                             for (int j = 0; j < TABLE_WIDTH; j++) {
                                 if (buttons[i][j].getGlobalBounds().contains(
                                         event.mouseButton.x, event.mouseButton.y)) {
-                                    buttons[i][j].setTexture(&buttonTextures[1]);
-                                    std::cout << "Button (" << i << "," << j << ") clicked!\n";
-                                    // TODO: Handle the game logic here
+                                    if(game.xTurn == true && game.board[i][j] == -1)
+                                    {
+                                        buttons[i][j].setTexture(&buttonTextures[1]);
+                                        game.board[i][j] = game.xTurn;
+                                        game.xTurn = false;
+                                    }
+                                    if (game.xTurn == false && game.board[i][j] == -1)
+                                    {
+                                        buttons[i][j].setTexture(&buttonTextures[2]);
+                                        game.board[i][j] = game.xTurn;
+                                        game.xTurn = true;
+                                    }
+                                    game.checkGameState();
+                                    //std::cout << "Button (" << i << "," << j << ") clicked!\n";
                                 }
                             }
                         }
