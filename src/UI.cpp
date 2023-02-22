@@ -20,10 +20,9 @@ void UI::playGame() {
         auto random_position = game.generateRandomMove();
         if (game.xTurn == false && game.board[random_position.first][random_position.second] == -1 && game.gameActive == true)
         {
-            game.checkGameState();
             buttons[random_position.first][random_position.second].setTexture(&buttonTextures[2]);
-            game.board[random_position.first][random_position.second] = game.xTurn;
-            game.xTurn = true;
+            game.placeSymbol(random_position.first,random_position.second);
+            game.changeTurn();
             game.displayBoard();
         }
 
@@ -43,8 +42,8 @@ void UI::playGame() {
                                     if(game.xTurn == true && game.board[i][j] == -1)
                                     {
                                         buttons[i][j].setTexture(&buttonTextures[1]);
-                                        game.board[i][j] = game.xTurn;
-                                        game.xTurn = false;
+                                        game.placeSymbol(i,j);
+                                        game.changeTurn();
                                     }
                                     //used if you want to play in 2 players
                                     /*if (game.xTurn == false && game.board[i][j] == -1)
@@ -72,6 +71,31 @@ void UI::playGame() {
             for (int j = 0; j < TABLE_WIDTH; j++) {
                 window.draw(buttons[i][j]);
             }
+        }
+        //Display the winner or DRAW
+        if(game.winner!=-1 && game.gameActive == false){
+            sf::Text text;
+            sf::Font font;
+            font.loadFromFile("assets/fonts/BAHNSCHRIFT.TTF");
+            text.setFont(font);
+            text.setCharacterSize(50);
+            text.setFillColor(sf::Color::Red);
+            switch(game.winner){
+                case 0:{
+                    text.setString("0 wins");
+                    break;
+                }
+                case 1:{
+                    text.setString("X wins");
+                    break;
+                }
+                case 2:{
+                    text.setString("DRAW");
+                    break;
+                }
+            }
+
+            window.draw(text);
         }
 
         window.display();

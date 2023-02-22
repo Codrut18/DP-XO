@@ -10,59 +10,61 @@ void Game::checkGameState() {
     for (int l = 0; l < 3; l++)
             if (board[l][0] == board[l][1] && board[l][1] == board[l][2] && board[l][2] == 1)
             {
-                std::cout << "X wins";
+                std::cout << "X wins\n";
+                this->winner = 1;
                 stopGame();
             }
             else if (board[l][0] == board[l][1] && board[l][1] == board[l][2] && board[l][2] == 0)
             {
-                std::cout << "0 wins";
+                std::cout<<"0 wins\n";
+                this->winner = 0;
                 stopGame();
             }
 
         for (int c = 0; c < 3; c++)
             if (board[0][c] == board[1][c] && board[1][c] == board[2][c] && board[2][c] == 1)
             {
-                std::cout << "X wins";
-                //stop game
+                std::cout << "X wins\n";
+                this->winner = 1;
                 stopGame();
             }
             else if (board[0][c] == board[1][c] && board[1][c] == board[2][c] && board[2][c] == 0)
             {
-                std::cout << "0 wins";
-                //stop game
+                std::cout<<"0 wins\n";
+                this->winner = 0;
                 stopGame();
             }
     if (board[0][0] == board[1][1] && board[1][1] == board[2][2] && board[2][2] == 1)
     {
-        std::cout<<"X wins";
-        //stop game
+        std::cout << "X wins\n";
+        this->winner = 1;
         stopGame();
     }
     else if (board[0][0] == board[1][1] && board[1][1] == board[2][2] && board[2][2] == 0)
     {
-        std::cout<<"0 wins";
-        //stop game
+        std::cout<<"0 wins\n";
+        this->winner = 0;
         stopGame();
     }
 
     if(board[0][2] == board[1][1] && board[1][1] == board[2][0] && board[2][0] == 1)
     {
-        std::cout<<"X wins";
-        //stop game
+        std::cout << "X wins\n";
+        this->winner = 1;
         stopGame();
     }
 
     if(board[0][2] == board[1][1] && board[1][1] == board[2][0] && board[2][0] == 0)
     {
-        std::cout<<"0 wins";
-        //stop game
+        std::cout<<"0 wins\n";
+        this->winner = 0;
         stopGame();
     }
 
-    if(this->nrOfTurns==9)
+    if(this->nrOfTurns==9 && this->winner == -1)
     {
-        std::cout<<"DRAW";
-        //stop game
+        std::cout<<"DRAW\n";
+        this->winner = 2;
         stopGame();
     }
 }
@@ -77,7 +79,6 @@ void Game::placeSymbol(int l, int c) {
     if(board[l][c]!=-1)
         return;
     board[l][c] = xTurn;
-    changeTurn();
 }
 
 bool Game::positionIsTouched(int l, int c) {
