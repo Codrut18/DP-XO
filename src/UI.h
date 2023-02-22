@@ -24,7 +24,6 @@ class UI {
 
 public:
 
-    int board[TABLE_HEIGHT][TABLE_WIDTH];
     sf::RectangleShape buttons[TABLE_HEIGHT][TABLE_WIDTH];
     sf::Texture buttonTextures[3];
 

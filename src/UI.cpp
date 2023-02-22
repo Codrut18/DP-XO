@@ -79,10 +79,6 @@ void UI::playGame() {
 }
 
 void UI::gameBoard() {
-    // Create the game board
-    for(int i = 0 ; i < TABLE_HEIGHT; i++)
-        for(int j = 0; j < TABLE_WIDTH; j++)
-            board[i][j] = 0;
 
     // Create an array of buttons
     buttons[TABLE_HEIGHT][TABLE_WIDTH];
