@@ -24,6 +24,7 @@ void UI::playGame() {
             buttons[random_position.first][random_position.second].setTexture(&buttonTextures[2]);
             game.board[random_position.first][random_position.second] = game.xTurn;
             game.xTurn = true;
+            game.displayBoard();
         }
 
         sf::Event event;
@@ -86,7 +87,7 @@ void UI::gameBoard() {
     buttonTextures[3];
     buttonTextures[0].loadFromFile("../assets/button.png"); // texture for empty button
     buttonTextures[1].loadFromFile("../assets/x_button.png"); // texture for X button
-    buttonTextures[2].loadFromFile("../assets/o_button.png"); // texture for 0 button
+    buttonTextures[2].loadFromFile("../assets/0_button.png"); // texture for 0 button
 
     for (int i = 0; i < TABLE_HEIGHT; i++) {
         for (int j = 0; j < TABLE_WIDTH; j++) {

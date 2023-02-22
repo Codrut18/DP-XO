@@ -3,7 +3,7 @@ project(X_0)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(X_0 src/main.cpp headers/Engine.hpp src/Engine.cpp src/Game.h src/Game.cpp)
+add_executable(X_0 src/main.cpp src/Game.h src/Game.cpp src/UI.cpp src/UI.h src/UI.h)
 
 include_directories(headers SFML/include)
 
