@@ -30,7 +30,7 @@ bool Board::placeMark(int line, int col, bool mark) {
     this->table[line][col] = (int)mark;
 }
 
-Board::~Board() {
-
+short Board::getSign(int line, int col) {
+    return table[line][col];
 }
 

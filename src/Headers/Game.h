@@ -1,4 +1,7 @@
 #include "SFML/Graphics.hpp"
+#include "Board.h"
+#include "Computer.h"
+#include "Player.h"
 #include <iostream>
 
 /*
@@ -17,7 +20,11 @@
 
 class Game {
 public:
-    int board[3][3]={-1,-1,-1,-1,-1,-1,-1,-1,-1};
+    //int board[3][3]={-1,-1,-1,-1,-1,-1,-1,-1,-1};
+    Board board;
+    Player *player = nullptr;
+    Computer *computer = nullptr;
+
     bool xTurn = true;
     int nrOfTurns = 0;
     bool gameActive = false;
@@ -30,15 +37,14 @@ public:
 
     void changeTurn();
 
-    void placeSymbol(int l, int c);
-
     bool positionIsTouched(int l, int c);
 
     void displayBoard();
 
-    void start();
+    void start(bool);
 
     void stopGame();
 
+    void start();
 };
 
