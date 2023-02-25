@@ -3,7 +3,7 @@ project(X_0)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(X_0 src/main.cpp src/Game.h src/Game.cpp src/UI.cpp src/UI.h src/UI.h src/Headers/Player.h src/Headers/Board.h src/Headers/Computer.h src/Sources/Board.cpp src/Sources/Player.cpp src/Sources/Computer.cpp src/Headers/TicTacToe.h src/Sources/TicTacToe.cpp)
+add_executable(X_0 src/main.cpp src/Headers/Game.h src/Sources/Game.cpp src/Sources/UI.cpp src/Headers/UI.h src/Headers/UI.h src/Headers/Player.h src/Headers/Board.h src/Headers/Computer.h src/Sources/Board.cpp src/Sources/Player.cpp src/Sources/Computer.cpp src/Headers/TicTacToe.h src/Sources/TicTacToe.cpp)
 
 include_directories(headers SFML/include src/assets/fonts)
 

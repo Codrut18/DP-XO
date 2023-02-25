@@ -1,5 +1,5 @@
 #include <iostream>
-#include "UI.h"
+#include "../Headers/UI.h"
 
 void UI::playGame() {
     sf::RenderWindow window(sf::VideoMode(BOARD_WIDTH, BOARD_HEIGHT), "Tic Tac Toe");

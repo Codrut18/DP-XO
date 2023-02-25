@@ -2,7 +2,7 @@
 // Created by Vlad on 2/21/2023.
 //
 
-#include "Game.h"
+#include "../Headers/Game.h"
 #include <random>
 #include <ctime>
 
