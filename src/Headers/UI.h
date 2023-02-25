@@ -19,6 +19,8 @@ const size_t BOARD_WIDTH = TABLE_WIDTH * (BUTTON_WIDTH + BUTTON_SPACING) - BUTTO
 const size_t BOARD_HEIGHT = TABLE_HEIGHT * (BUTTON_HEIGHT + BUTTON_SPACING) - BUTTON_SPACING + BOARD_PADDING * 2;
 const size_t LINE_THICKNESS = 10;
 
+sf::RenderWindow window(sf::VideoMode(BOARD_WIDTH, BOARD_HEIGHT), "Tic Tac Toe");
+
 class UI {
 
 
@@ -30,6 +32,8 @@ public:
     void gameBoard();
 
     void playGame();
+
+    void displayLabel();
     Game game;
 };
 

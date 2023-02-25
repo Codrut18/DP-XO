@@ -2,7 +2,6 @@
 #include "../Headers/UI.h"
 
 void UI::playGame() {
-    sf::RenderWindow window(sf::VideoMode(BOARD_WIDTH, BOARD_HEIGHT), "Tic Tac Toe");
 
     // Set the window position to the center of the screen
     sf::Vector2i screenCenter(sf::VideoMode::getDesktopMode().width / 2,
@@ -72,31 +71,8 @@ void UI::playGame() {
                 window.draw(buttons[i][j]);
             }
         }
-        //Display the winner or DRAW
-        if(game.winner!=-1 && game.gameActive == false){
-            sf::Text text;
-            sf::Font font;
-            font.loadFromFile("assets/fonts/BAHNSCHRIFT.TTF");
-            text.setFont(font);
-            text.setCharacterSize(50);
-            text.setFillColor(sf::Color::Red);
-            switch(game.winner){
-                case 0:{
-                    text.setString("0 wins");
-                    break;
-                }
-                case 1:{
-                    text.setString("X wins");
-                    break;
-                }
-                case 2:{
-                    text.setString("DRAW");
-                    break;
-                }
-            }
 
-            window.draw(text);
-        }
+        displayLabel();
 
         window.display();
     }
@@ -122,6 +98,34 @@ void UI::gameBoard() {
                     j * (BUTTON_WIDTH + BUTTON_SPACING) + BUTTON_SPACING + BOARD_PADDING,
                     i * (BUTTON_HEIGHT + BUTTON_SPACING) + BUTTON_SPACING + BOARD_PADDING);
         }
+    }
+}
+
+void UI::displayLabel() {
+    //Display the winner or DRAW
+    if(game.winner!=-1 && game.gameActive == false){
+        sf::Text text;
+        sf::Font font;
+        font.loadFromFile("assets/fonts/BAHNSCHRIFT.TTF");
+        text.setFont(font);
+        text.setCharacterSize(50);
+        text.setFillColor(sf::Color::Red);
+        switch(game.winner){
+            case 0:{
+                text.setString("0 wins");
+                break;
+            }
+            case 1:{
+                text.setString("X wins");
+                break;
+            }
+            case 2:{
+                text.setString("DRAW");
+                break;
+            }
+        }
+
+        window.draw(text);
     }
 }
 
