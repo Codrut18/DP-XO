@@ -17,7 +17,9 @@ private:
 public:
     Board();
 
+    bool setMark(int line, int col, bool mark);
+
     bool isFull();
-    void Reset();
+    void reset();
     void initTable();
 };

@@ -20,3 +20,13 @@ void Board::initTable()
     }
 }
 
+bool Board::setMark(int line, int col, bool mark) {
+    if(line<0 || line>this->bheight || col<0 || col>this->bwidth)
+        return false;
+
+    if(this->table[line][col]!=-1)
+        return false;
+
+    this->table[line][col] = (int)mark;
+}
+
