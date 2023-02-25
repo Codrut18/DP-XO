@@ -1,5 +1,4 @@
 #include<cstddef>
-#include "Player.h"
 #ifndef X_0_BOARD_H
 #define X_0_BOARD_H
 #endif //X_0_BOARD_H
@@ -17,7 +16,9 @@ private:
 public:
     Board();
 
-    bool setMark(int line, int col, bool mark);
+    bool placeMark(int line, int col, bool mark);
+
+    short getSign(int line, int col);
 
     bool isFull();
     void reset();

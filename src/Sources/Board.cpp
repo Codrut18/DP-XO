@@ -20,7 +20,7 @@ void Board::initTable()
     }
 }
 
-bool Board::setMark(int line, int col, bool mark) {
+bool Board::placeMark(int line, int col, bool mark) {
     if(line<0 || line>this->bheight || col<0 || col>this->bwidth)
         return false;
 
@@ -28,5 +28,9 @@ bool Board::setMark(int line, int col, bool mark) {
         return false;
 
     this->table[line][col] = (int)mark;
+}
+
+short Board::getSign(int line, int col) {
+    return table[line][col];
 }
 
