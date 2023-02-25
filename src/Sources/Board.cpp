@@ -30,3 +30,7 @@ bool Board::setMark(int line, int col, bool mark) {
     this->table[line][col] = (int)mark;
 }
 
+Board::~Board() {
+
+}
+

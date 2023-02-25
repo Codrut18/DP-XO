@@ -1,4 +1,5 @@
 #include "Board.h"
+#include <ctime>
 
 #ifndef X_0_COMPUTER_H
 #define X_0_COMPUTER_H
@@ -15,6 +16,8 @@ public:
     void setMark(bool);
 
     bool getMark();
+
+    std::pair<int, int> generateRandomMove();
 
     void makeMove(Board &board);
 };
