@@ -9,7 +9,7 @@ void Computer::makeMove(Board &board) {
 
     auto pozitieMiscare = generateRandomMove();
 
-    board.table[pozitieMiscare.first][pozitieMiscare.second] = mark;
+    board.placeMark(pozitieMiscare.first, pozitieMiscare.second, mark);
 }
 
 std::pair<int, int> Computer::generateRandomMove() {

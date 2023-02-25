@@ -21,7 +21,7 @@ public:
 
     virtual ~Board();
 
-    bool setMark(int line, int col, bool mark);
+    bool placeMark(int line, int col, bool mark);
 
     bool isFull();
     void reset();
