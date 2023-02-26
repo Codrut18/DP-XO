@@ -1,5 +1,4 @@
 #include "SFML/Graphics.hpp"
-#include "Board.h"
 #include "Computer.h"
 #include "Player.h"
 #include <iostream>
@@ -18,33 +17,29 @@
  *  scriu acest comentariu ca sa fac un commit de test fiindca am o problema cu usernamenul
  */
 
+
 class Game {
 public:
     //int board[3][3]={-1,-1,-1,-1,-1,-1,-1,-1,-1};
-    Board board;
+    Board *board;
     Player *player = nullptr;
     Computer *computer = nullptr;
 
-    bool xTurn = true;
-    int nrOfTurns = 0;
+    bool playerTurn = true;
+
     bool gameActive = false;
 
     int winner = -1;
 
-    std::pair<int,int> generateRandomMove();
+    void start();
 
     void checkGameState();
 
     void changeTurn();
 
-    bool positionIsTouched(int l, int c);
-
     void displayBoard();
-
-    void start(bool);
 
     void stopGame();
 
-    void start();
 };
 

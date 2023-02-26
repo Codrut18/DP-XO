@@ -7,3 +7,7 @@ Player::Player(bool _mark) {
 void Player::makeMove(Board &board, int line, int col) {
     board.placeMark(line, col, this->mark);
 }
+
+bool Player::getMark() {
+    return this->mark;
+}

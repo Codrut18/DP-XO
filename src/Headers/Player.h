@@ -18,5 +18,7 @@ public:
 
     void makeMove(Board &board, int line, int col);
 
+    bool getMark();
+
     void choosePlace();
 };

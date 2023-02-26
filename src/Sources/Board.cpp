@@ -1,23 +1,9 @@
+#include <iostream>
 #include "../Headers/Board.h"
 
 Board::Board()
 {
     rlSize=0;
-}
-bool Board::isFull()
-{
-    return rlSize == bMaxSize;
-}
-
-void Board::initTable()
-{
-    for(size_t i=0;i<bwidth;i++)
-    {
-        for(size_t j=0;j<bheight;i++)
-        {
-            table[i][j]=-1;
-        }
-    }
 }
 
 bool Board::placeMark(int line, int col, bool mark) {
@@ -28,9 +14,43 @@ bool Board::placeMark(int line, int col, bool mark) {
         return false;
 
     this->table[line][col] = (int)mark;
+    this->rlSize++;
 }
 
 short Board::getSign(int line, int col) {
     return table[line][col];
 }
+
+void Board::displayBoard() {
+    for (int line = 0; line < 3; line++) {
+        for (int col = 0; col < 3; col++) {
+            if (getSign(line, col) == 1) {
+                std::cout << " X";
+            } else if (getSign(line, col) == 0) {
+                std::cout << " O";
+            } else {
+                std::cout << "  ";
+            }
+
+            if (col < 2) {
+                std::cout << "  | ";
+            }
+        }
+        std::cout << std::endl;
+        if (line < 2) {
+            std::cout << "----|-----|----" << std::endl;
+        }
+    }
+}
+
+bool Board::positionIsAvailable(int line, int col) {
+    if(table[line][col]==-1)
+        return true;
+    return false;
+}
+
+bool Board::isFull() {
+    return this->rlSize==9;
+}
+
 
