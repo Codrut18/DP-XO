@@ -1,3 +1,0 @@
-C:/Users/40766/Desktop/University/Anul_2/DP/Proiect1/cmake-build-debug/CMakeFiles/X_0.dir
-C:/Users/40766/Desktop/University/Anul_2/DP/Proiect1/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/40766/Desktop/University/Anul_2/DP/Proiect1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
