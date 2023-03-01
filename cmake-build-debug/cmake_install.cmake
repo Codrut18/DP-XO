@@ -2,7 +2,7 @@
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/X0_UI")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/UI")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -35,6 +35,11 @@ endif()
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
   set(CMAKE_OBJDUMP "D:/SFMLMingw/mingw64/bin/objdump.exe")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("D:/FACULTATE/Facultate/An_2_sem_2/DP_DesignPattern/ProjectX0/DP-XO/cmake-build-debug/Google_tests/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)

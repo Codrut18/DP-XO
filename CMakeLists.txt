@@ -7,6 +7,7 @@ add_executable(Logic Logic/main.cpp Logic/Headers/Game.h Logic/Sources/Game.cpp 
 add_executable(UI UI/main.cpp)
 add_executable(Console Console/main.cpp Console/main.cpp)
 
+
 include_directories(Headers /SFML/include)
 
 set(SFML_ROOT SFML)
@@ -19,11 +20,8 @@ endif()
 
 file(COPY UI/assets DESTINATION ${CMAKE_BINARY_DIR})
 
-# Copy dlls to build
-if(WIN32)
-    file(GLOB BINARY_DEP_DLLS "${SFML_INCLUDE_DIR}/../bin/*.dll")
-    file(COPY ${BINARY_DEP_DLLS} DESTINATION ${CMAKE_BINARY_DIR})
-    file(GLOB MINGW_DEP_DLLS "C:/mingw64/bin/*.dll")
-    file(COPY ${MINGW_DEP_DLLS} DESTINATION ${CMAKE_BINARY_DIR})
-endif()
+add_subdirectory(Google_tests)
+
+
+
 

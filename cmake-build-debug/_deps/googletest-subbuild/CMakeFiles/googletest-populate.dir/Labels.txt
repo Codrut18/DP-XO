@@ -1,0 +1,14 @@
+# Target labels
+ googletest-populate
+# Source files and their labels
+D:/FACULTATE/Facultate/An_2_sem_2/DP_DesignPattern/ProjectX0/DP-XO/cmake-build-debug/_deps/googletest-subbuild/CMakeFiles/googletest-populate
+D:/FACULTATE/Facultate/An_2_sem_2/DP_DesignPattern/ProjectX0/DP-XO/cmake-build-debug/_deps/googletest-subbuild/CMakeFiles/googletest-populate.rule
+D:/FACULTATE/Facultate/An_2_sem_2/DP_DesignPattern/ProjectX0/DP-XO/cmake-build-debug/_deps/googletest-subbuild/CMakeFiles/googletest-populate-complete.rule
+D:/FACULTATE/Facultate/An_2_sem_2/DP_DesignPattern/ProjectX0/DP-XO/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-build.rule
+D:/FACULTATE/Facultate/An_2_sem_2/DP_DesignPattern/ProjectX0/DP-XO/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-configure.rule
+D:/FACULTATE/Facultate/An_2_sem_2/DP_DesignPattern/ProjectX0/DP-XO/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-download.rule
+D:/FACULTATE/Facultate/An_2_sem_2/DP_DesignPattern/ProjectX0/DP-XO/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-install.rule
+D:/FACULTATE/Facultate/An_2_sem_2/DP_DesignPattern/ProjectX0/DP-XO/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-mkdir.rule
+D:/FACULTATE/Facultate/An_2_sem_2/DP_DesignPattern/ProjectX0/DP-XO/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-patch.rule
+D:/FACULTATE/Facultate/An_2_sem_2/DP_DesignPattern/ProjectX0/DP-XO/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-test.rule
+D:/FACULTATE/Facultate/An_2_sem_2/DP_DesignPattern/ProjectX0/DP-XO/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-update.rule

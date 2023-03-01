@@ -1,0 +1,254 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.17"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						2,
+						3
+					]
+				},
+				{
+					"build" : "Google_tests",
+					"childIndexes" : 
+					[
+						2
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-Google_tests-Debug-0edb77f8d1483ac16915.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.17"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "Google_tests",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "Google_tests/lib/googletest-main",
+					"childIndexes" : 
+					[
+						3
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-Google_tests.lib.googletest-main-Debug-e28b60f5a6c7c18f39ae.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 2,
+					"source" : "Google_tests/lib/googletest-main"
+				},
+				{
+					"build" : "Google_tests/lib/googletest-main/googlemock",
+					"childIndexes" : 
+					[
+						4
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-Google_tests.lib.googletest-main.googlemock-Debug-f3b31060d0b5f6863366.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 3,
+					"source" : "Google_tests/lib/googletest-main/googlemock",
+					"targetIndexes" : 
+					[
+						4,
+						5
+					]
+				},
+				{
+					"build" : "Google_tests/lib/googletest-main/googletest",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-Google_tests.lib.googletest-main.googletest-Debug-09210640c4a97916aa76.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 4,
+					"source" : "Google_tests/lib/googletest-main/googletest",
+					"targetIndexes" : 
+					[
+						6,
+						7
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "UI",
+					"targetIndexes" : 
+					[
+						0,
+						2,
+						3
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						2
+					],
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "Google_tests",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						3
+					],
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "googletest-distribution",
+					"parentIndex" : 1
+				},
+				{
+					"childIndexes" : 
+					[
+						4
+					],
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "gmock",
+					"parentIndex" : 2,
+					"targetIndexes" : 
+					[
+						4,
+						5
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						4
+					],
+					"name" : "gtest",
+					"parentIndex" : 3,
+					"targetIndexes" : 
+					[
+						6,
+						7
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Console::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Console-Debug-f8e0448d2cf715560445.json",
+					"name" : "Console",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "Google_Tests_run::@eb06d550d4862b816b8d",
+					"jsonFile" : "target-Google_Tests_run-Debug-bf0121bbbbe34cc6b0f3.json",
+					"name" : "Google_Tests_run",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Logic::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Logic-Debug-f94a232bfe56228996c2.json",
+					"name" : "Logic",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "UI::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-UI-Debug-4c2541d2efbc06856db9.json",
+					"name" : "UI",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "gmock::@b6fa991fc293d8b43acb",
+					"jsonFile" : "target-gmock-Debug-0e9f621b70b76ce7c4f0.json",
+					"name" : "gmock",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "gmock_main::@b6fa991fc293d8b43acb",
+					"jsonFile" : "target-gmock_main-Debug-c937948120ecfa4d9d38.json",
+					"name" : "gmock_main",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "gtest::@b6c5b543568efb85e37a",
+					"jsonFile" : "target-gtest-Debug-c4ea1ec2f8e2c6805004.json",
+					"name" : "gtest",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "gtest_main::@b6c5b543568efb85e37a",
+					"jsonFile" : "target-gtest_main-Debug-958e08acf2b18158e133.json",
+					"name" : "gtest_main",
+					"projectIndex" : 4
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/FACULTATE/Facultate/An_2_sem_2/DP_DesignPattern/ProjectX0/DP-XO/cmake-build-debug",
+		"source" : "D:/FACULTATE/Facultate/An_2_sem_2/DP_DesignPattern/ProjectX0/DP-XO"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}
