@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\Logic.dir/objects.a
+D:\SFMLMingw\mingw64\bin\ar.exe qc CMakeFiles\Logic.dir/objects.a @CMakeFiles\Logic.dir\objects1.rsp
+D:\SFMLMingw\mingw64\bin\c++.exe -g -Wl,--whole-archive CMakeFiles\Logic.dir/objects.a -Wl,--no-whole-archive -o Logic.exe -Wl,--out-implib,libLogic.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Logic.dir\linklibs.rsp

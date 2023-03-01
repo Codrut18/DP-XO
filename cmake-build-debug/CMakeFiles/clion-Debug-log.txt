@@ -1,0 +1,5 @@
+"C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" -S D:\FACULTATE\Facultate\An_2_sem_2\DP_DesignPattern\ProjectX0\DP-XO -B D:\FACULTATE\Facultate\An_2_sem_2\DP_DesignPattern\ProjectX0\DP-XO\cmake-build-debug
+-- Found SFML .. in D:/FACULTATE/Facultate/An_2_sem_2/DP_DesignPattern/ProjectX0/DP-XO/SFML/include
+-- Configuring done
+-- Generating done
+-- Build files have been written to: D:/FACULTATE/Facultate/An_2_sem_2/DP_DesignPattern/ProjectX0/DP-XO/cmake-build-debug

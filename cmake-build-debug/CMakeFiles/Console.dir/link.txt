@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\Console.dir/objects.a
+D:\SFMLMingw\mingw64\bin\ar.exe qc CMakeFiles\Console.dir/objects.a @CMakeFiles\Console.dir\objects1.rsp
+D:\SFMLMingw\mingw64\bin\c++.exe -g -Wl,--whole-archive CMakeFiles\Console.dir/objects.a -Wl,--no-whole-archive -o Console.exe -Wl,--out-implib,libConsole.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Console.dir\linklibs.rsp
