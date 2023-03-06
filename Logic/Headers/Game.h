@@ -20,7 +20,7 @@ class Game {
 
 public:
 
-    Game();
+    Game() = default;
 
     Game(char playerMark, char computerMark);
 
