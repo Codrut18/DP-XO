@@ -18,6 +18,8 @@ public:
     void makeMove(int line, int col, std::vector<std::vector<int>> &board);
 
     void makeMove(int line, int col, Board &board);
+
+    char GetMark() const;
 };
 
 

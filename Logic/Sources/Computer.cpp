@@ -30,3 +30,7 @@ std::pair<int,int> Computer::makeMove(Board *board1) {
 
     return pozitie;
 }
+
+char Computer::GetMark() const {
+    return mark;
+}

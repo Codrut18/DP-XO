@@ -38,6 +38,8 @@ public:
     void reset();
 
     bool positionIsAvailable(int line, int col);
+
+    void PrintBoard();
 };
 
 

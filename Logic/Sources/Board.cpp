@@ -3,6 +3,7 @@
 //
 
 #include "../Headers/Board.h"
+#include <iostream>
 
 Board::Board() {
     board.resize(3);
@@ -42,7 +43,7 @@ void Board::reset() {
     height = 3;
     for (int line = 0; line < height; line++) {
         for (int col = 0; col < width; col++) {
-            board[line][col]=-1;
+            board[line][col] = -1;
         }
     }
 }
@@ -60,23 +61,36 @@ int Board::getSign(int line, int col) {
 }
 
 void Board::placeSign(int line, int col, char mark) {
-    if(positionIsAvailable(line, col)) {
-        switch(mark){
-            case 'X':{
+    if (positionIsAvailable(line, col)) {
+        switch (mark) {
+            case 'X': {
                 board[line][col] = 1;
                 break;
             }
-            case '0':{
+            case '0': {
                 board[line][col] = 0;
                 break;
             }
-            default: break;
+            default:
+                break;
         }
     }
 }
 
 bool Board::positionIsAvailable(int line, int col) {
-    return board[line][col]==-1;
+    return board[line][col] == -1;
 }
 
-
+void Board::PrintBoard() {
+    for (int i = 0; i < height; i++) {
+        for (int j = 0; j < width; j++) {
+            if (board[i][j] == -1)
+                std::cout << "_ ";
+            else if (board[i][j] == 0)
+                std::cout << "0 ";
+            else if (board[i][j] == 1)
+                std::cout << "X ";
+        }
+        std::cout<<"\n";
+    }
+}
