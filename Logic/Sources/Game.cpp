@@ -96,3 +96,7 @@ int Game::checkWinner() {
 
     return winner;
 }
+
+Computer *Game::getComputer() const {
+    return computer;
+}

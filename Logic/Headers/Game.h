@@ -26,6 +26,8 @@ public:
 
     Player *getPlayer() const;
 
+    Computer *getComputer() const;
+
     void setPlayer(Player *player);
 
     Board *getBoard() const;
