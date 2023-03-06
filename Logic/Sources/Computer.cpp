@@ -20,7 +20,7 @@ std::pair<int,int> Computer::makeMove(Board *board1) {
     pozitie.first = random_number/3;
     pozitie.second = random_number%3;
 
-    while(board[pozitie.first][pozitie.second] == -1)
+    while(board[pozitie.first][pozitie.second] != -1)
     {
         random_number = std::rand() % 9;
 
