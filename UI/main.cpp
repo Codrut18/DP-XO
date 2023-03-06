@@ -1,5 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include "../Logic/Headers/Game.h"
 
 const size_t TABLE_WIDTH = 3;
 const size_t TABLE_HEIGHT = 3;
@@ -13,6 +14,10 @@ const size_t LINE_THICKNESS = 10;
 
 int main()
 {
+    Game game('X','O');
+    game.start();
+    game.setIsPlayerTurn(true);
+
     sf::RenderWindow window(sf::VideoMode(BOARD_WIDTH, BOARD_HEIGHT), "Tic Tac Toe");
 
     // Set the window position to the center of the screen
@@ -44,10 +49,16 @@ int main()
         }
     }
 
-    short board[3][3] = {-1,-1,-1,-1,-1,-1,-1,-1,-1};
-    bool xTurn = true;
-
     while (window.isOpen()) {
+
+        if(game.isPlayerTurn() == false)
+        {
+            std::pair<int,int> pozitie = game.getComputer()->makeMove(game.getBoard());
+            buttons[pozitie.first][pozitie.second].setTexture(&buttonTextures[2]);
+            game.getBoard()->placeSign(pozitie.first,pozitie.second, '0');
+            game.setIsPlayerTurn(true);
+            int rezultat = game.checkWinner();
+        }
 
         sf::Event event;
         while (window.pollEvent(event)) {
@@ -62,19 +73,22 @@ int main()
                             for (int j = 0; j < TABLE_WIDTH; j++) {
                                 if (buttons[i][j].getGlobalBounds().contains(
                                         event.mouseButton.x, event.mouseButton.y)) {
-                                    if(board[i][j] == -1 && xTurn == true)
+                                    if(game.isPlayerTurn() == true)
                                     {
                                         buttons[i][j].setTexture(&buttonTextures[1]);
-                                        board[i][j] = 1;
-                                        xTurn = false;
+                                        game.getBoard()->placeSign(i,j,'X');
+                                        game.setIsPlayerTurn(false);
+                                        int rezultat = game.checkWinner();
+                                        std::cout<<rezultat;
                                     }
-                                    if (xTurn == false && board[i][j] == -1)
-                                    {
-                                        buttons[i][j].setTexture(&buttonTextures[2]);
-                                        board[i][j] = 1;
-                                        xTurn = true;
-                                    }
-                                    //std::cout << "Button (" << i << "," << j << ") clicked!\n";
+                                    //used for 2 player game
+//                                    if (xTurn == false && board[i][j] == -1)
+//                                    {
+//                                        buttons[i][j].setTexture(&buttonTextures[2]);
+//                                        board[i][j] = 1;
+//                                        xTurn = true;
+//                                    }
+                                    std::cout << "Button (" << i << "," << j << ") clicked!\n";
                                 }
                             }
                         }
