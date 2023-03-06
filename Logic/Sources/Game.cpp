@@ -28,8 +28,8 @@ void Game::setIsPlayerTurn(bool isPlayerTurn) {
     Game::playerTurn = isPlayerTurn;
 }
 
-bool Game::isGameActive1() const {
-    return isGameActive;
+bool Game::isGameActive() const {
+    return active;
 }
 
 Game::Game(char playerMark, char computerMark) {
@@ -44,6 +44,7 @@ Game::Game(char playerMark, char computerMark) {
 }
 
 void Game::start() {
+    active = true;
     board->reset();
 }
 
@@ -52,22 +53,22 @@ int Game::checkWinner() {
         if (board->getSign(line, 0) == board->getSign(line, 1) && board->getSign(line, 1) == board->getSign(line, 2) &&
             board->getSign(line, 2) == 0) {
             winner = 0;
-            isGameActive = false;
+            active = false;
         } else if (board->getSign(line, 0) == board->getSign(line, 1) &&
                    board->getSign(line, 1) == board->getSign(line, 2) && board->getSign(line, 2) == 1) {
             winner = 1;
-            isGameActive = false;
+            active = false;
         }
     }
     for (int col = 0; col < 3; col++) {
         if (board->getSign(0, col) == board->getSign(1, col) && board->getSign(1, col) == board->getSign(2, col) &&
             board->getSign(2, col) == 0) {
             winner = 0;
-            isGameActive = false;
+            active = false;
         } else if (board->getSign(0, col) == board->getSign(1, col) && board->getSign(1, col) == board->getSign(2, col) &&
                    board->getSign(2, col) == 1) {
             winner = 1;
-            isGameActive = false;
+            active = false;
         }
     }
 
@@ -75,22 +76,22 @@ int Game::checkWinner() {
         if (board->getSign(0, 0) == board->getSign(1, 1) && board->getSign(1, 1) == board->getSign(2, 2) &&
             board->getSign(2, 2) == 0) {
             winner = 0;
-            isGameActive = false;
+            active = false;
         } else if (board->getSign(0, 0) == board->getSign(1, 1) && board->getSign(1, 1) == board->getSign(2, 2) &&
                    board->getSign(2, 2) == 1) {
             winner = 1;
-            isGameActive = false;
+            active = false;
         } else if (board->getSign(0, 2) == board->getSign(1, 1) && board->getSign(1, 1) == board->getSign(2, 0) &&
                    board->getSign(2, 0) == 0) {
             winner = 0;
-            isGameActive = false;
+            active = false;
         } else if (board->getSign(0, 2) == board->getSign(1, 1) && board->getSign(1, 1) == board->getSign(2, 0) &&
                    board->getSign(2, 0) == 1) {
             winner = 1;
-            isGameActive = false;
+            active = false;
         } else if (board->boardIsFull()) {
             winner = 2;
-            isGameActive = false;
+            active = false;
         }
     }
 

@@ -51,7 +51,7 @@ int main()
 
     while (window.isOpen()) {
 
-        if(game.isPlayerTurn() == false)
+        if(game.isPlayerTurn() == false && game.isGameActive() == true)
         {
             std::pair<int,int> pozitie = game.getComputer()->makeMove(game.getBoard());
             buttons[pozitie.first][pozitie.second].setTexture(&buttonTextures[2]);
@@ -73,13 +73,12 @@ int main()
                             for (int j = 0; j < TABLE_WIDTH; j++) {
                                 if (buttons[i][j].getGlobalBounds().contains(
                                         event.mouseButton.x, event.mouseButton.y)) {
-                                    if(game.isPlayerTurn() == true)
+                                    if(game.isPlayerTurn() == true && game.isGameActive() == true)
                                     {
                                         buttons[i][j].setTexture(&buttonTextures[1]);
                                         game.getBoard()->placeSign(i,j,'X');
                                         game.setIsPlayerTurn(false);
                                         int rezultat = game.checkWinner();
-                                        std::cout<<rezultat;
                                     }
                                     //used for 2 player game
 //                                    if (xTurn == false && board[i][j] == -1)
@@ -88,7 +87,7 @@ int main()
 //                                        board[i][j] = 1;
 //                                        xTurn = true;
 //                                    }
-                                    std::cout << "Button (" << i << "," << j << ") clicked!\n";
+                                    //std::cout << "Button (" << i << "," << j << ") clicked!\n";
                                 }
                             }
                         }
@@ -100,6 +99,32 @@ int main()
         }
 
         window.clear(sf::Color::Yellow);
+
+        //Display the winner or DRAW
+        if(game.checkWinner()!=-1 && game.isGameActive() == false){
+            sf::Text text;
+            sf::Font font;
+            font.loadFromFile("assets/fonts/BAHNSCHRIFT.TTF");
+            text.setFont(font);
+            text.setCharacterSize(50);
+            text.setFillColor(sf::Color::Red);
+            switch(game.checkWinner()){
+                case 0:{
+                    text.setString("0 wins");
+                    break;
+                }
+                case 1:{
+                    text.setString("X wins");
+                    break;
+                }
+                case 2:{
+                    text.setString("DRAW");
+                    break;
+                }
+            }
+
+            window.draw(text);
+        }
 
         // Draw the buttons
         for (int i = 0; i < TABLE_HEIGHT; i++) {

@@ -15,7 +15,7 @@ class Game {
     Computer *computer;
     Board *board;
     bool playerTurn = false;
-    bool isGameActive = false;
+    bool active = false;
     int winner = -1;
 
 public:
@@ -38,7 +38,7 @@ public:
 
     void setIsPlayerTurn(bool isPlayerTurn);
 
-    bool isGameActive1() const;
+    bool isGameActive() const;
 
     int checkWinner(); //returns -1 if there's no winner yet, 0 if 0 wins, 1 if X wins, 2 if it's DRAW
 
