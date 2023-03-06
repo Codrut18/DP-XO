@@ -1,6 +1,8 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include "../Logic/Headers/Game.h"
+#include <chrono>
+#include <future>
 
 const size_t TABLE_WIDTH = 3;
 const size_t TABLE_HEIGHT = 3;
@@ -53,6 +55,9 @@ int main()
 
         if(game.isPlayerTurn() == false && game.isGameActive() == true)
         {
+            std::future<void> result = std::async(std::launch::async, [](){
+                std::this_thread::sleep_for(std::chrono::seconds(1));
+            });
             std::pair<int,int> pozitie = game.getComputer()->makeMove(game.getBoard());
             buttons[pozitie.first][pozitie.second].setTexture(&buttonTextures[2]);
             game.getBoard()->placeSign(pozitie.first,pozitie.second, '0');
@@ -73,7 +78,7 @@ int main()
                             for (int j = 0; j < TABLE_WIDTH; j++) {
                                 if (buttons[i][j].getGlobalBounds().contains(
                                         event.mouseButton.x, event.mouseButton.y)) {
-                                    if(game.isPlayerTurn() == true && game.isGameActive() == true)
+                                    if(game.isPlayerTurn() == true && game.isGameActive() == true && game.getBoard()->positionIsAvailable(i,j) == true)
                                     {
                                         buttons[i][j].setTexture(&buttonTextures[1]);
                                         game.getBoard()->placeSign(i,j,'X');
