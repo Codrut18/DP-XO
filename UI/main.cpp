@@ -73,7 +73,7 @@ int main()
                             for (int j = 0; j < TABLE_WIDTH; j++) {
                                 if (buttons[i][j].getGlobalBounds().contains(
                                         event.mouseButton.x, event.mouseButton.y)) {
-                                    if(game.isPlayerTurn() == true && game.isGameActive() == true)
+                                    if(game.isPlayerTurn() == true && game.isGameActive() == true && game.getBoard()->positionIsAvailable(i,j) == true)
                                     {
                                         buttons[i][j].setTexture(&buttonTextures[1]);
                                         game.getBoard()->placeSign(i,j,'X');
