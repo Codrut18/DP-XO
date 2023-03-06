@@ -17,3 +17,7 @@ void Player::makeMove(int line, int col, Board &board) {
     if(board.positionIsAvailable(line,col))
         board.placeSign(line,col, this->mark);
 }
+
+char Player::GetMark() const {
+    return mark;
+}

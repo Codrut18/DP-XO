@@ -16,6 +16,8 @@ public:
     Computer(char s);
 
     std::pair<int,int> makeMove(Board *board);
+
+    char GetMark() const;
 };
 
 
