@@ -7,6 +7,7 @@
 
 
 #include <vector>
+#include "Board.h"
 
 class Computer {
     char mark = 'u';
@@ -14,7 +15,7 @@ class Computer {
 public:
     Computer(char s);
 
-    void makeMove(std::vector<std::vector<int>> &board);
+    std::pair<int,int> makeMove(Board *board);
 };
 
 
