@@ -65,14 +65,15 @@ int Game::checkWinner() {
             board->getSign(2, col) == 0) {
             winner = 0;
             active = false;
-        } else if (board->getSign(0, col) == board->getSign(1, col) && board->getSign(1, col) == board->getSign(2, col) &&
+        } else if (board->getSign(0, col) == board->getSign(1, col) &&
+                   board->getSign(1, col) == board->getSign(2, col) &&
                    board->getSign(2, col) == 1) {
             winner = 1;
             active = false;
         }
     }
 
-    if(winner==-1) {
+    if (winner == -1) {
         if (board->getSign(0, 0) == board->getSign(1, 1) && board->getSign(1, 1) == board->getSign(2, 2) &&
             board->getSign(2, 2) == 0) {
             winner = 0;

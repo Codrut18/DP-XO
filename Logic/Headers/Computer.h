@@ -15,7 +15,7 @@ class Computer {
 public:
     Computer(char s);
 
-    std::pair<int,int> makeMove(Board *board);
+    std::pair<int,int> makeMove(int line, int col, Board* board);
 
     char GetMark() const;
 };

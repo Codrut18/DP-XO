@@ -6,11 +6,13 @@
 #define LOGIC_GAME_H
 
 
+#include <memory>
 #include "Player.h"
 #include "Computer.h"
 #include "Board.h"
 
 class Game {
+    //Player *player;
     Player *player;
     Computer *computer;
     Board *board;
