@@ -1,6 +1,5 @@
 #include <SFML/Graphics.hpp>
-#include <iostream>
-#include "../Logic/Headers/Game.h"
+#include "Game.h"
 #include <chrono>
 #include <future>
 
@@ -16,9 +15,10 @@ const size_t LINE_THICKNESS = 10;
 
 int main()
 {
-    Game game('X','O');
-    game.start();
-    game.setIsPlayerTurn(true);
+//    Game *game = Game::Produce('X','0');
+    IGame *game = IGame::Produce('X','0');
+    game->start();
+    game->setIsPlayerTurn(true);
 
     sf::RenderWindow window(sf::VideoMode(BOARD_WIDTH, BOARD_HEIGHT), "Tic Tac Toe");
 
@@ -53,16 +53,16 @@ int main()
 
     while (window.isOpen()) {
 
-        if(game.isPlayerTurn() == false && game.isGameActive() == true)
+        if(game->isPlayerTurn() == false && game->isGameActive() == true)
         {
             std::future<void> result = std::async(std::launch::async, [](){
                 std::this_thread::sleep_for(std::chrono::seconds(1));
             });
-            std::pair<int,int> pozitie = game.getComputer()->makeMove(game.getBoard());
+            std::pair<int,int> pozitie = game->getComputer()->makeMove(game->getBoard());
             buttons[pozitie.first][pozitie.second].setTexture(&buttonTextures[2]);
-            game.getBoard()->placeSign(pozitie.first,pozitie.second, '0');
-            game.setIsPlayerTurn(true);
-            int rezultat = game.checkWinner();
+            game->getBoard()->placeSign(pozitie.first,pozitie.second, '0');
+            game->setIsPlayerTurn(true);
+            int rezultat = game->checkWinner();
         }
 
         sf::Event event;
@@ -78,12 +78,12 @@ int main()
                             for (int j = 0; j < TABLE_WIDTH; j++) {
                                 if (buttons[i][j].getGlobalBounds().contains(
                                         event.mouseButton.x, event.mouseButton.y)) {
-                                    if(game.isPlayerTurn() == true && game.isGameActive() == true && game.getBoard()->positionIsAvailable(i,j) == true)
+                                    if(game->isPlayerTurn() == true && game->isGameActive() == true && game->getBoard()->positionIsAvailable(i,j) == true)
                                     {
                                         buttons[i][j].setTexture(&buttonTextures[1]);
-                                        game.getBoard()->placeSign(i,j,'X');
-                                        game.setIsPlayerTurn(false);
-                                        int rezultat = game.checkWinner();
+                                        game->getBoard()->placeSign(i,j,'X');
+                                        game->setIsPlayerTurn(false);
+                                        int rezultat = game->checkWinner();
                                     }
                                     //used for 2 player game
 //                                    if (xTurn == false && board[i][j] == -1)
@@ -106,14 +106,14 @@ int main()
         window.clear(sf::Color::Yellow);
 
         //Display the winner or DRAW
-        if(game.checkWinner()!=-1 && game.isGameActive() == false){
+        if(game->checkWinner()!=-1 && game->isGameActive() == false){
             sf::Text text;
             sf::Font font;
             font.loadFromFile("assets/fonts/BAHNSCHRIFT.TTF");
             text.setFont(font);
             text.setCharacterSize(50);
             text.setFillColor(sf::Color::Red);
-            switch(game.checkWinner()){
+            switch(game->checkWinner()){
                 case 0:{
                     text.setString("0 wins");
                     break;

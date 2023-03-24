@@ -157,21 +157,9 @@ preinstall/fast:
 
 # clear depends
 depend:
+	$(CMAKE_COMMAND) -P D:\FACULTATE\Facultate\An_2_sem_2\DP_DesignPattern\ProjectX0\DP-XO\cmake-build-debug\CMakeFiles\VerifyGlobs.cmake
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
 .PHONY : depend
-
-#=============================================================================
-# Target rules for targets named Logic
-
-# Build rule for target.
-Logic: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Logic
-.PHONY : Logic
-
-# fast build rule for target.
-Logic/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Logic.dir\build.make CMakeFiles/Logic.dir/build
-.PHONY : Logic/fast
 
 #=============================================================================
 # Target rules for targets named UI
@@ -198,6 +186,32 @@ Console: cmake_check_build_system
 Console/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Console.dir\build.make CMakeFiles/Console.dir/build
 .PHONY : Console/fast
+
+#=============================================================================
+# Target rules for targets named GT
+
+# Build rule for target.
+GT: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 GT
+.PHONY : GT
+
+# fast build rule for target.
+GT/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/build
+.PHONY : GT/fast
+
+#=============================================================================
+# Target rules for targets named LogicLib
+
+# Build rule for target.
+LogicLib: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 LogicLib
+.PHONY : LogicLib
+
+# fast build rule for target.
+LogicLib/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LogicLib.dir\build.make CMakeFiles/LogicLib.dir/build
+.PHONY : LogicLib/fast
 
 #=============================================================================
 # Target rules for targets named Google_Tests_run
@@ -264,12 +278,37 @@ gtest_main/fast:
 	$(MAKE) $(MAKESILENT) -f Google_tests\lib\googletest-main\googletest\CMakeFiles\gtest_main.dir\build.make Google_tests/lib/googletest-main/googletest/CMakeFiles/gtest_main.dir/build
 .PHONY : gtest_main/fast
 
+CMakeFiles/3.24.3/CompilerIdCXX/CMakeCXXCompilerId.obj: CMakeFiles/3.24.3/CompilerIdCXX/CMakeCXXCompilerId.cpp.obj
+.PHONY : CMakeFiles/3.24.3/CompilerIdCXX/CMakeCXXCompilerId.obj
+
+# target to build an object file
+CMakeFiles/3.24.3/CompilerIdCXX/CMakeCXXCompilerId.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/CMakeFiles/3.24.3/CompilerIdCXX/CMakeCXXCompilerId.cpp.obj
+.PHONY : CMakeFiles/3.24.3/CompilerIdCXX/CMakeCXXCompilerId.cpp.obj
+
+CMakeFiles/3.24.3/CompilerIdCXX/CMakeCXXCompilerId.i: CMakeFiles/3.24.3/CompilerIdCXX/CMakeCXXCompilerId.cpp.i
+.PHONY : CMakeFiles/3.24.3/CompilerIdCXX/CMakeCXXCompilerId.i
+
+# target to preprocess a source file
+CMakeFiles/3.24.3/CompilerIdCXX/CMakeCXXCompilerId.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/CMakeFiles/3.24.3/CompilerIdCXX/CMakeCXXCompilerId.cpp.i
+.PHONY : CMakeFiles/3.24.3/CompilerIdCXX/CMakeCXXCompilerId.cpp.i
+
+CMakeFiles/3.24.3/CompilerIdCXX/CMakeCXXCompilerId.s: CMakeFiles/3.24.3/CompilerIdCXX/CMakeCXXCompilerId.cpp.s
+.PHONY : CMakeFiles/3.24.3/CompilerIdCXX/CMakeCXXCompilerId.s
+
+# target to generate assembly for a file
+CMakeFiles/3.24.3/CompilerIdCXX/CMakeCXXCompilerId.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/CMakeFiles/3.24.3/CompilerIdCXX/CMakeCXXCompilerId.cpp.s
+.PHONY : CMakeFiles/3.24.3/CompilerIdCXX/CMakeCXXCompilerId.cpp.s
+
 Console/main.obj: Console/main.cpp.obj
 .PHONY : Console/main.obj
 
 # target to build an object file
 Console/main.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Console.dir\build.make CMakeFiles/Console.dir/Console/main.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/Console/main.cpp.obj
 .PHONY : Console/main.cpp.obj
 
 Console/main.i: Console/main.cpp.i
@@ -278,6 +317,7 @@ Console/main.i: Console/main.cpp.i
 # target to preprocess a source file
 Console/main.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Console.dir\build.make CMakeFiles/Console.dir/Console/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/Console/main.cpp.i
 .PHONY : Console/main.cpp.i
 
 Console/main.s: Console/main.cpp.s
@@ -286,14 +326,64 @@ Console/main.s: Console/main.cpp.s
 # target to generate assembly for a file
 Console/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Console.dir\build.make CMakeFiles/Console.dir/Console/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/Console/main.cpp.s
 .PHONY : Console/main.cpp.s
+
+Google_tests/test1.obj: Google_tests/test1.cpp.obj
+.PHONY : Google_tests/test1.obj
+
+# target to build an object file
+Google_tests/test1.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/Google_tests/test1.cpp.obj
+.PHONY : Google_tests/test1.cpp.obj
+
+Google_tests/test1.i: Google_tests/test1.cpp.i
+.PHONY : Google_tests/test1.i
+
+# target to preprocess a source file
+Google_tests/test1.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/Google_tests/test1.cpp.i
+.PHONY : Google_tests/test1.cpp.i
+
+Google_tests/test1.s: Google_tests/test1.cpp.s
+.PHONY : Google_tests/test1.s
+
+# target to generate assembly for a file
+Google_tests/test1.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/Google_tests/test1.cpp.s
+.PHONY : Google_tests/test1.cpp.s
+
+Google_tests/tests2.obj: Google_tests/tests2.cpp.obj
+.PHONY : Google_tests/tests2.obj
+
+# target to build an object file
+Google_tests/tests2.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/Google_tests/tests2.cpp.obj
+.PHONY : Google_tests/tests2.cpp.obj
+
+Google_tests/tests2.i: Google_tests/tests2.cpp.i
+.PHONY : Google_tests/tests2.i
+
+# target to preprocess a source file
+Google_tests/tests2.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/Google_tests/tests2.cpp.i
+.PHONY : Google_tests/tests2.cpp.i
+
+Google_tests/tests2.s: Google_tests/tests2.cpp.s
+.PHONY : Google_tests/tests2.s
+
+# target to generate assembly for a file
+Google_tests/tests2.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/Google_tests/tests2.cpp.s
+.PHONY : Google_tests/tests2.cpp.s
 
 Logic/Sources/Board.obj: Logic/Sources/Board.cpp.obj
 .PHONY : Logic/Sources/Board.obj
 
 # target to build an object file
 Logic/Sources/Board.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Logic.dir\build.make CMakeFiles/Logic.dir/Logic/Sources/Board.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/Logic/Sources/Board.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LogicLib.dir\build.make CMakeFiles/LogicLib.dir/Logic/Sources/Board.cpp.obj
 .PHONY : Logic/Sources/Board.cpp.obj
 
 Logic/Sources/Board.i: Logic/Sources/Board.cpp.i
@@ -301,7 +391,8 @@ Logic/Sources/Board.i: Logic/Sources/Board.cpp.i
 
 # target to preprocess a source file
 Logic/Sources/Board.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Logic.dir\build.make CMakeFiles/Logic.dir/Logic/Sources/Board.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/Logic/Sources/Board.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LogicLib.dir\build.make CMakeFiles/LogicLib.dir/Logic/Sources/Board.cpp.i
 .PHONY : Logic/Sources/Board.cpp.i
 
 Logic/Sources/Board.s: Logic/Sources/Board.cpp.s
@@ -309,7 +400,8 @@ Logic/Sources/Board.s: Logic/Sources/Board.cpp.s
 
 # target to generate assembly for a file
 Logic/Sources/Board.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Logic.dir\build.make CMakeFiles/Logic.dir/Logic/Sources/Board.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/Logic/Sources/Board.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LogicLib.dir\build.make CMakeFiles/LogicLib.dir/Logic/Sources/Board.cpp.s
 .PHONY : Logic/Sources/Board.cpp.s
 
 Logic/Sources/Computer.obj: Logic/Sources/Computer.cpp.obj
@@ -317,7 +409,8 @@ Logic/Sources/Computer.obj: Logic/Sources/Computer.cpp.obj
 
 # target to build an object file
 Logic/Sources/Computer.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Logic.dir\build.make CMakeFiles/Logic.dir/Logic/Sources/Computer.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/Logic/Sources/Computer.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LogicLib.dir\build.make CMakeFiles/LogicLib.dir/Logic/Sources/Computer.cpp.obj
 .PHONY : Logic/Sources/Computer.cpp.obj
 
 Logic/Sources/Computer.i: Logic/Sources/Computer.cpp.i
@@ -325,7 +418,8 @@ Logic/Sources/Computer.i: Logic/Sources/Computer.cpp.i
 
 # target to preprocess a source file
 Logic/Sources/Computer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Logic.dir\build.make CMakeFiles/Logic.dir/Logic/Sources/Computer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/Logic/Sources/Computer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LogicLib.dir\build.make CMakeFiles/LogicLib.dir/Logic/Sources/Computer.cpp.i
 .PHONY : Logic/Sources/Computer.cpp.i
 
 Logic/Sources/Computer.s: Logic/Sources/Computer.cpp.s
@@ -333,39 +427,17 @@ Logic/Sources/Computer.s: Logic/Sources/Computer.cpp.s
 
 # target to generate assembly for a file
 Logic/Sources/Computer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Logic.dir\build.make CMakeFiles/Logic.dir/Logic/Sources/Computer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/Logic/Sources/Computer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LogicLib.dir\build.make CMakeFiles/LogicLib.dir/Logic/Sources/Computer.cpp.s
 .PHONY : Logic/Sources/Computer.cpp.s
-
-Logic/Sources/Game.obj: Logic/Sources/Game.cpp.obj
-.PHONY : Logic/Sources/Game.obj
-
-# target to build an object file
-Logic/Sources/Game.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Logic.dir\build.make CMakeFiles/Logic.dir/Logic/Sources/Game.cpp.obj
-.PHONY : Logic/Sources/Game.cpp.obj
-
-Logic/Sources/Game.i: Logic/Sources/Game.cpp.i
-.PHONY : Logic/Sources/Game.i
-
-# target to preprocess a source file
-Logic/Sources/Game.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Logic.dir\build.make CMakeFiles/Logic.dir/Logic/Sources/Game.cpp.i
-.PHONY : Logic/Sources/Game.cpp.i
-
-Logic/Sources/Game.s: Logic/Sources/Game.cpp.s
-.PHONY : Logic/Sources/Game.s
-
-# target to generate assembly for a file
-Logic/Sources/Game.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Logic.dir\build.make CMakeFiles/Logic.dir/Logic/Sources/Game.cpp.s
-.PHONY : Logic/Sources/Game.cpp.s
 
 Logic/Sources/Player.obj: Logic/Sources/Player.cpp.obj
 .PHONY : Logic/Sources/Player.obj
 
 # target to build an object file
 Logic/Sources/Player.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Logic.dir\build.make CMakeFiles/Logic.dir/Logic/Sources/Player.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/Logic/Sources/Player.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LogicLib.dir\build.make CMakeFiles/LogicLib.dir/Logic/Sources/Player.cpp.obj
 .PHONY : Logic/Sources/Player.cpp.obj
 
 Logic/Sources/Player.i: Logic/Sources/Player.cpp.i
@@ -373,7 +445,8 @@ Logic/Sources/Player.i: Logic/Sources/Player.cpp.i
 
 # target to preprocess a source file
 Logic/Sources/Player.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Logic.dir\build.make CMakeFiles/Logic.dir/Logic/Sources/Player.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/Logic/Sources/Player.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LogicLib.dir\build.make CMakeFiles/LogicLib.dir/Logic/Sources/Player.cpp.i
 .PHONY : Logic/Sources/Player.cpp.i
 
 Logic/Sources/Player.s: Logic/Sources/Player.cpp.s
@@ -381,7 +454,8 @@ Logic/Sources/Player.s: Logic/Sources/Player.cpp.s
 
 # target to generate assembly for a file
 Logic/Sources/Player.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Logic.dir\build.make CMakeFiles/Logic.dir/Logic/Sources/Player.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/Logic/Sources/Player.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LogicLib.dir\build.make CMakeFiles/LogicLib.dir/Logic/Sources/Player.cpp.s
 .PHONY : Logic/Sources/Player.cpp.s
 
 Logic/main.obj: Logic/main.cpp.obj
@@ -389,7 +463,8 @@ Logic/main.obj: Logic/main.cpp.obj
 
 # target to build an object file
 Logic/main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Logic.dir\build.make CMakeFiles/Logic.dir/Logic/main.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/Logic/main.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LogicLib.dir\build.make CMakeFiles/LogicLib.dir/Logic/main.cpp.obj
 .PHONY : Logic/main.cpp.obj
 
 Logic/main.i: Logic/main.cpp.i
@@ -397,7 +472,8 @@ Logic/main.i: Logic/main.cpp.i
 
 # target to preprocess a source file
 Logic/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Logic.dir\build.make CMakeFiles/Logic.dir/Logic/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/Logic/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LogicLib.dir\build.make CMakeFiles/LogicLib.dir/Logic/main.cpp.i
 .PHONY : Logic/main.cpp.i
 
 Logic/main.s: Logic/main.cpp.s
@@ -405,8 +481,423 @@ Logic/main.s: Logic/main.cpp.s
 
 # target to generate assembly for a file
 Logic/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Logic.dir\build.make CMakeFiles/Logic.dir/Logic/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/Logic/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LogicLib.dir\build.make CMakeFiles/LogicLib.dir/Logic/main.cpp.s
 .PHONY : Logic/main.cpp.s
+
+SFML/examples/ftp/Ftp.obj: SFML/examples/ftp/Ftp.cpp.obj
+.PHONY : SFML/examples/ftp/Ftp.obj
+
+# target to build an object file
+SFML/examples/ftp/Ftp.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/SFML/examples/ftp/Ftp.cpp.obj
+.PHONY : SFML/examples/ftp/Ftp.cpp.obj
+
+SFML/examples/ftp/Ftp.i: SFML/examples/ftp/Ftp.cpp.i
+.PHONY : SFML/examples/ftp/Ftp.i
+
+# target to preprocess a source file
+SFML/examples/ftp/Ftp.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/SFML/examples/ftp/Ftp.cpp.i
+.PHONY : SFML/examples/ftp/Ftp.cpp.i
+
+SFML/examples/ftp/Ftp.s: SFML/examples/ftp/Ftp.cpp.s
+.PHONY : SFML/examples/ftp/Ftp.s
+
+# target to generate assembly for a file
+SFML/examples/ftp/Ftp.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/SFML/examples/ftp/Ftp.cpp.s
+.PHONY : SFML/examples/ftp/Ftp.cpp.s
+
+SFML/examples/island/Island.obj: SFML/examples/island/Island.cpp.obj
+.PHONY : SFML/examples/island/Island.obj
+
+# target to build an object file
+SFML/examples/island/Island.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/SFML/examples/island/Island.cpp.obj
+.PHONY : SFML/examples/island/Island.cpp.obj
+
+SFML/examples/island/Island.i: SFML/examples/island/Island.cpp.i
+.PHONY : SFML/examples/island/Island.i
+
+# target to preprocess a source file
+SFML/examples/island/Island.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/SFML/examples/island/Island.cpp.i
+.PHONY : SFML/examples/island/Island.cpp.i
+
+SFML/examples/island/Island.s: SFML/examples/island/Island.cpp.s
+.PHONY : SFML/examples/island/Island.s
+
+# target to generate assembly for a file
+SFML/examples/island/Island.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/SFML/examples/island/Island.cpp.s
+.PHONY : SFML/examples/island/Island.cpp.s
+
+SFML/examples/joystick/Joystick.obj: SFML/examples/joystick/Joystick.cpp.obj
+.PHONY : SFML/examples/joystick/Joystick.obj
+
+# target to build an object file
+SFML/examples/joystick/Joystick.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/SFML/examples/joystick/Joystick.cpp.obj
+.PHONY : SFML/examples/joystick/Joystick.cpp.obj
+
+SFML/examples/joystick/Joystick.i: SFML/examples/joystick/Joystick.cpp.i
+.PHONY : SFML/examples/joystick/Joystick.i
+
+# target to preprocess a source file
+SFML/examples/joystick/Joystick.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/SFML/examples/joystick/Joystick.cpp.i
+.PHONY : SFML/examples/joystick/Joystick.cpp.i
+
+SFML/examples/joystick/Joystick.s: SFML/examples/joystick/Joystick.cpp.s
+.PHONY : SFML/examples/joystick/Joystick.s
+
+# target to generate assembly for a file
+SFML/examples/joystick/Joystick.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/SFML/examples/joystick/Joystick.cpp.s
+.PHONY : SFML/examples/joystick/Joystick.cpp.s
+
+SFML/examples/opengl/OpenGL.obj: SFML/examples/opengl/OpenGL.cpp.obj
+.PHONY : SFML/examples/opengl/OpenGL.obj
+
+# target to build an object file
+SFML/examples/opengl/OpenGL.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/SFML/examples/opengl/OpenGL.cpp.obj
+.PHONY : SFML/examples/opengl/OpenGL.cpp.obj
+
+SFML/examples/opengl/OpenGL.i: SFML/examples/opengl/OpenGL.cpp.i
+.PHONY : SFML/examples/opengl/OpenGL.i
+
+# target to preprocess a source file
+SFML/examples/opengl/OpenGL.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/SFML/examples/opengl/OpenGL.cpp.i
+.PHONY : SFML/examples/opengl/OpenGL.cpp.i
+
+SFML/examples/opengl/OpenGL.s: SFML/examples/opengl/OpenGL.cpp.s
+.PHONY : SFML/examples/opengl/OpenGL.s
+
+# target to generate assembly for a file
+SFML/examples/opengl/OpenGL.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/SFML/examples/opengl/OpenGL.cpp.s
+.PHONY : SFML/examples/opengl/OpenGL.cpp.s
+
+SFML/examples/pong/Pong.obj: SFML/examples/pong/Pong.cpp.obj
+.PHONY : SFML/examples/pong/Pong.obj
+
+# target to build an object file
+SFML/examples/pong/Pong.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/SFML/examples/pong/Pong.cpp.obj
+.PHONY : SFML/examples/pong/Pong.cpp.obj
+
+SFML/examples/pong/Pong.i: SFML/examples/pong/Pong.cpp.i
+.PHONY : SFML/examples/pong/Pong.i
+
+# target to preprocess a source file
+SFML/examples/pong/Pong.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/SFML/examples/pong/Pong.cpp.i
+.PHONY : SFML/examples/pong/Pong.cpp.i
+
+SFML/examples/pong/Pong.s: SFML/examples/pong/Pong.cpp.s
+.PHONY : SFML/examples/pong/Pong.s
+
+# target to generate assembly for a file
+SFML/examples/pong/Pong.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/SFML/examples/pong/Pong.cpp.s
+.PHONY : SFML/examples/pong/Pong.cpp.s
+
+SFML/examples/shader/Shader.obj: SFML/examples/shader/Shader.cpp.obj
+.PHONY : SFML/examples/shader/Shader.obj
+
+# target to build an object file
+SFML/examples/shader/Shader.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/SFML/examples/shader/Shader.cpp.obj
+.PHONY : SFML/examples/shader/Shader.cpp.obj
+
+SFML/examples/shader/Shader.i: SFML/examples/shader/Shader.cpp.i
+.PHONY : SFML/examples/shader/Shader.i
+
+# target to preprocess a source file
+SFML/examples/shader/Shader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/SFML/examples/shader/Shader.cpp.i
+.PHONY : SFML/examples/shader/Shader.cpp.i
+
+SFML/examples/shader/Shader.s: SFML/examples/shader/Shader.cpp.s
+.PHONY : SFML/examples/shader/Shader.s
+
+# target to generate assembly for a file
+SFML/examples/shader/Shader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/SFML/examples/shader/Shader.cpp.s
+.PHONY : SFML/examples/shader/Shader.cpp.s
+
+SFML/examples/sockets/Sockets.obj: SFML/examples/sockets/Sockets.cpp.obj
+.PHONY : SFML/examples/sockets/Sockets.obj
+
+# target to build an object file
+SFML/examples/sockets/Sockets.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/SFML/examples/sockets/Sockets.cpp.obj
+.PHONY : SFML/examples/sockets/Sockets.cpp.obj
+
+SFML/examples/sockets/Sockets.i: SFML/examples/sockets/Sockets.cpp.i
+.PHONY : SFML/examples/sockets/Sockets.i
+
+# target to preprocess a source file
+SFML/examples/sockets/Sockets.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/SFML/examples/sockets/Sockets.cpp.i
+.PHONY : SFML/examples/sockets/Sockets.cpp.i
+
+SFML/examples/sockets/Sockets.s: SFML/examples/sockets/Sockets.cpp.s
+.PHONY : SFML/examples/sockets/Sockets.s
+
+# target to generate assembly for a file
+SFML/examples/sockets/Sockets.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/SFML/examples/sockets/Sockets.cpp.s
+.PHONY : SFML/examples/sockets/Sockets.cpp.s
+
+SFML/examples/sockets/TCP.obj: SFML/examples/sockets/TCP.cpp.obj
+.PHONY : SFML/examples/sockets/TCP.obj
+
+# target to build an object file
+SFML/examples/sockets/TCP.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/SFML/examples/sockets/TCP.cpp.obj
+.PHONY : SFML/examples/sockets/TCP.cpp.obj
+
+SFML/examples/sockets/TCP.i: SFML/examples/sockets/TCP.cpp.i
+.PHONY : SFML/examples/sockets/TCP.i
+
+# target to preprocess a source file
+SFML/examples/sockets/TCP.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/SFML/examples/sockets/TCP.cpp.i
+.PHONY : SFML/examples/sockets/TCP.cpp.i
+
+SFML/examples/sockets/TCP.s: SFML/examples/sockets/TCP.cpp.s
+.PHONY : SFML/examples/sockets/TCP.s
+
+# target to generate assembly for a file
+SFML/examples/sockets/TCP.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/SFML/examples/sockets/TCP.cpp.s
+.PHONY : SFML/examples/sockets/TCP.cpp.s
+
+SFML/examples/sockets/UDP.obj: SFML/examples/sockets/UDP.cpp.obj
+.PHONY : SFML/examples/sockets/UDP.obj
+
+# target to build an object file
+SFML/examples/sockets/UDP.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/SFML/examples/sockets/UDP.cpp.obj
+.PHONY : SFML/examples/sockets/UDP.cpp.obj
+
+SFML/examples/sockets/UDP.i: SFML/examples/sockets/UDP.cpp.i
+.PHONY : SFML/examples/sockets/UDP.i
+
+# target to preprocess a source file
+SFML/examples/sockets/UDP.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/SFML/examples/sockets/UDP.cpp.i
+.PHONY : SFML/examples/sockets/UDP.cpp.i
+
+SFML/examples/sockets/UDP.s: SFML/examples/sockets/UDP.cpp.s
+.PHONY : SFML/examples/sockets/UDP.s
+
+# target to generate assembly for a file
+SFML/examples/sockets/UDP.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/SFML/examples/sockets/UDP.cpp.s
+.PHONY : SFML/examples/sockets/UDP.cpp.s
+
+SFML/examples/sound-capture/SoundCapture.obj: SFML/examples/sound-capture/SoundCapture.cpp.obj
+.PHONY : SFML/examples/sound-capture/SoundCapture.obj
+
+# target to build an object file
+SFML/examples/sound-capture/SoundCapture.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/SFML/examples/sound-capture/SoundCapture.cpp.obj
+.PHONY : SFML/examples/sound-capture/SoundCapture.cpp.obj
+
+SFML/examples/sound-capture/SoundCapture.i: SFML/examples/sound-capture/SoundCapture.cpp.i
+.PHONY : SFML/examples/sound-capture/SoundCapture.i
+
+# target to preprocess a source file
+SFML/examples/sound-capture/SoundCapture.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/SFML/examples/sound-capture/SoundCapture.cpp.i
+.PHONY : SFML/examples/sound-capture/SoundCapture.cpp.i
+
+SFML/examples/sound-capture/SoundCapture.s: SFML/examples/sound-capture/SoundCapture.cpp.s
+.PHONY : SFML/examples/sound-capture/SoundCapture.s
+
+# target to generate assembly for a file
+SFML/examples/sound-capture/SoundCapture.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/SFML/examples/sound-capture/SoundCapture.cpp.s
+.PHONY : SFML/examples/sound-capture/SoundCapture.cpp.s
+
+SFML/examples/sound/Sound.obj: SFML/examples/sound/Sound.cpp.obj
+.PHONY : SFML/examples/sound/Sound.obj
+
+# target to build an object file
+SFML/examples/sound/Sound.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/SFML/examples/sound/Sound.cpp.obj
+.PHONY : SFML/examples/sound/Sound.cpp.obj
+
+SFML/examples/sound/Sound.i: SFML/examples/sound/Sound.cpp.i
+.PHONY : SFML/examples/sound/Sound.i
+
+# target to preprocess a source file
+SFML/examples/sound/Sound.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/SFML/examples/sound/Sound.cpp.i
+.PHONY : SFML/examples/sound/Sound.cpp.i
+
+SFML/examples/sound/Sound.s: SFML/examples/sound/Sound.cpp.s
+.PHONY : SFML/examples/sound/Sound.s
+
+# target to generate assembly for a file
+SFML/examples/sound/Sound.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/SFML/examples/sound/Sound.cpp.s
+.PHONY : SFML/examples/sound/Sound.cpp.s
+
+SFML/examples/voip/Client.obj: SFML/examples/voip/Client.cpp.obj
+.PHONY : SFML/examples/voip/Client.obj
+
+# target to build an object file
+SFML/examples/voip/Client.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/SFML/examples/voip/Client.cpp.obj
+.PHONY : SFML/examples/voip/Client.cpp.obj
+
+SFML/examples/voip/Client.i: SFML/examples/voip/Client.cpp.i
+.PHONY : SFML/examples/voip/Client.i
+
+# target to preprocess a source file
+SFML/examples/voip/Client.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/SFML/examples/voip/Client.cpp.i
+.PHONY : SFML/examples/voip/Client.cpp.i
+
+SFML/examples/voip/Client.s: SFML/examples/voip/Client.cpp.s
+.PHONY : SFML/examples/voip/Client.s
+
+# target to generate assembly for a file
+SFML/examples/voip/Client.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/SFML/examples/voip/Client.cpp.s
+.PHONY : SFML/examples/voip/Client.cpp.s
+
+SFML/examples/voip/Server.obj: SFML/examples/voip/Server.cpp.obj
+.PHONY : SFML/examples/voip/Server.obj
+
+# target to build an object file
+SFML/examples/voip/Server.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/SFML/examples/voip/Server.cpp.obj
+.PHONY : SFML/examples/voip/Server.cpp.obj
+
+SFML/examples/voip/Server.i: SFML/examples/voip/Server.cpp.i
+.PHONY : SFML/examples/voip/Server.i
+
+# target to preprocess a source file
+SFML/examples/voip/Server.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/SFML/examples/voip/Server.cpp.i
+.PHONY : SFML/examples/voip/Server.cpp.i
+
+SFML/examples/voip/Server.s: SFML/examples/voip/Server.cpp.s
+.PHONY : SFML/examples/voip/Server.s
+
+# target to generate assembly for a file
+SFML/examples/voip/Server.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/SFML/examples/voip/Server.cpp.s
+.PHONY : SFML/examples/voip/Server.cpp.s
+
+SFML/examples/voip/VoIP.obj: SFML/examples/voip/VoIP.cpp.obj
+.PHONY : SFML/examples/voip/VoIP.obj
+
+# target to build an object file
+SFML/examples/voip/VoIP.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/SFML/examples/voip/VoIP.cpp.obj
+.PHONY : SFML/examples/voip/VoIP.cpp.obj
+
+SFML/examples/voip/VoIP.i: SFML/examples/voip/VoIP.cpp.i
+.PHONY : SFML/examples/voip/VoIP.i
+
+# target to preprocess a source file
+SFML/examples/voip/VoIP.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/SFML/examples/voip/VoIP.cpp.i
+.PHONY : SFML/examples/voip/VoIP.cpp.i
+
+SFML/examples/voip/VoIP.s: SFML/examples/voip/VoIP.cpp.s
+.PHONY : SFML/examples/voip/VoIP.s
+
+# target to generate assembly for a file
+SFML/examples/voip/VoIP.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/SFML/examples/voip/VoIP.cpp.s
+.PHONY : SFML/examples/voip/VoIP.cpp.s
+
+SFML/examples/win32/Win32.obj: SFML/examples/win32/Win32.cpp.obj
+.PHONY : SFML/examples/win32/Win32.obj
+
+# target to build an object file
+SFML/examples/win32/Win32.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/SFML/examples/win32/Win32.cpp.obj
+.PHONY : SFML/examples/win32/Win32.cpp.obj
+
+SFML/examples/win32/Win32.i: SFML/examples/win32/Win32.cpp.i
+.PHONY : SFML/examples/win32/Win32.i
+
+# target to preprocess a source file
+SFML/examples/win32/Win32.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/SFML/examples/win32/Win32.cpp.i
+.PHONY : SFML/examples/win32/Win32.cpp.i
+
+SFML/examples/win32/Win32.s: SFML/examples/win32/Win32.cpp.s
+.PHONY : SFML/examples/win32/Win32.s
+
+# target to generate assembly for a file
+SFML/examples/win32/Win32.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/SFML/examples/win32/Win32.cpp.s
+.PHONY : SFML/examples/win32/Win32.cpp.s
+
+SFML/examples/window/Window.obj: SFML/examples/window/Window.cpp.obj
+.PHONY : SFML/examples/window/Window.obj
+
+# target to build an object file
+SFML/examples/window/Window.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/SFML/examples/window/Window.cpp.obj
+.PHONY : SFML/examples/window/Window.cpp.obj
+
+SFML/examples/window/Window.i: SFML/examples/window/Window.cpp.i
+.PHONY : SFML/examples/window/Window.i
+
+# target to preprocess a source file
+SFML/examples/window/Window.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/SFML/examples/window/Window.cpp.i
+.PHONY : SFML/examples/window/Window.cpp.i
+
+SFML/examples/window/Window.s: SFML/examples/window/Window.cpp.s
+.PHONY : SFML/examples/window/Window.s
+
+# target to generate assembly for a file
+SFML/examples/window/Window.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/SFML/examples/window/Window.cpp.s
+.PHONY : SFML/examples/window/Window.cpp.s
+
+UI/Game.obj: UI/Game.cpp.obj
+.PHONY : UI/Game.obj
+
+# target to build an object file
+UI/Game.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\UI.dir\build.make CMakeFiles/UI.dir/UI/Game.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/UI/Game.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LogicLib.dir\build.make CMakeFiles/LogicLib.dir/UI/Game.cpp.obj
+.PHONY : UI/Game.cpp.obj
+
+UI/Game.i: UI/Game.cpp.i
+.PHONY : UI/Game.i
+
+# target to preprocess a source file
+UI/Game.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\UI.dir\build.make CMakeFiles/UI.dir/UI/Game.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/UI/Game.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LogicLib.dir\build.make CMakeFiles/LogicLib.dir/UI/Game.cpp.i
+.PHONY : UI/Game.cpp.i
+
+UI/Game.s: UI/Game.cpp.s
+.PHONY : UI/Game.s
+
+# target to generate assembly for a file
+UI/Game.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\UI.dir\build.make CMakeFiles/UI.dir/UI/Game.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/UI/Game.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LogicLib.dir\build.make CMakeFiles/LogicLib.dir/UI/Game.cpp.s
+.PHONY : UI/Game.cpp.s
 
 UI/main.obj: UI/main.cpp.obj
 .PHONY : UI/main.obj
@@ -414,6 +905,7 @@ UI/main.obj: UI/main.cpp.obj
 # target to build an object file
 UI/main.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\UI.dir\build.make CMakeFiles/UI.dir/UI/main.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/UI/main.cpp.obj
 .PHONY : UI/main.cpp.obj
 
 UI/main.i: UI/main.cpp.i
@@ -422,6 +914,7 @@ UI/main.i: UI/main.cpp.i
 # target to preprocess a source file
 UI/main.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\UI.dir\build.make CMakeFiles/UI.dir/UI/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/UI/main.cpp.i
 .PHONY : UI/main.cpp.i
 
 UI/main.s: UI/main.cpp.s
@@ -430,6 +923,7 @@ UI/main.s: UI/main.cpp.s
 # target to generate assembly for a file
 UI/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\UI.dir\build.make CMakeFiles/UI.dir/UI/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GT.dir\build.make CMakeFiles/GT.dir/UI/main.cpp.s
 .PHONY : UI/main.cpp.s
 
 # Help Target
@@ -445,31 +939,89 @@ help:
 	@echo ... list_install_components
 	@echo ... rebuild_cache
 	@echo ... Console
+	@echo ... GT
 	@echo ... Google_Tests_run
-	@echo ... Logic
+	@echo ... LogicLib
 	@echo ... UI
 	@echo ... gmock
 	@echo ... gmock_main
 	@echo ... gtest
 	@echo ... gtest_main
+	@echo ... CMakeFiles/3.24.3/CompilerIdCXX/CMakeCXXCompilerId.obj
+	@echo ... CMakeFiles/3.24.3/CompilerIdCXX/CMakeCXXCompilerId.i
+	@echo ... CMakeFiles/3.24.3/CompilerIdCXX/CMakeCXXCompilerId.s
 	@echo ... Console/main.obj
 	@echo ... Console/main.i
 	@echo ... Console/main.s
+	@echo ... Google_tests/test1.obj
+	@echo ... Google_tests/test1.i
+	@echo ... Google_tests/test1.s
+	@echo ... Google_tests/tests2.obj
+	@echo ... Google_tests/tests2.i
+	@echo ... Google_tests/tests2.s
 	@echo ... Logic/Sources/Board.obj
 	@echo ... Logic/Sources/Board.i
 	@echo ... Logic/Sources/Board.s
 	@echo ... Logic/Sources/Computer.obj
 	@echo ... Logic/Sources/Computer.i
 	@echo ... Logic/Sources/Computer.s
-	@echo ... Logic/Sources/Game.obj
-	@echo ... Logic/Sources/Game.i
-	@echo ... Logic/Sources/Game.s
 	@echo ... Logic/Sources/Player.obj
 	@echo ... Logic/Sources/Player.i
 	@echo ... Logic/Sources/Player.s
 	@echo ... Logic/main.obj
 	@echo ... Logic/main.i
 	@echo ... Logic/main.s
+	@echo ... SFML/examples/ftp/Ftp.obj
+	@echo ... SFML/examples/ftp/Ftp.i
+	@echo ... SFML/examples/ftp/Ftp.s
+	@echo ... SFML/examples/island/Island.obj
+	@echo ... SFML/examples/island/Island.i
+	@echo ... SFML/examples/island/Island.s
+	@echo ... SFML/examples/joystick/Joystick.obj
+	@echo ... SFML/examples/joystick/Joystick.i
+	@echo ... SFML/examples/joystick/Joystick.s
+	@echo ... SFML/examples/opengl/OpenGL.obj
+	@echo ... SFML/examples/opengl/OpenGL.i
+	@echo ... SFML/examples/opengl/OpenGL.s
+	@echo ... SFML/examples/pong/Pong.obj
+	@echo ... SFML/examples/pong/Pong.i
+	@echo ... SFML/examples/pong/Pong.s
+	@echo ... SFML/examples/shader/Shader.obj
+	@echo ... SFML/examples/shader/Shader.i
+	@echo ... SFML/examples/shader/Shader.s
+	@echo ... SFML/examples/sockets/Sockets.obj
+	@echo ... SFML/examples/sockets/Sockets.i
+	@echo ... SFML/examples/sockets/Sockets.s
+	@echo ... SFML/examples/sockets/TCP.obj
+	@echo ... SFML/examples/sockets/TCP.i
+	@echo ... SFML/examples/sockets/TCP.s
+	@echo ... SFML/examples/sockets/UDP.obj
+	@echo ... SFML/examples/sockets/UDP.i
+	@echo ... SFML/examples/sockets/UDP.s
+	@echo ... SFML/examples/sound-capture/SoundCapture.obj
+	@echo ... SFML/examples/sound-capture/SoundCapture.i
+	@echo ... SFML/examples/sound-capture/SoundCapture.s
+	@echo ... SFML/examples/sound/Sound.obj
+	@echo ... SFML/examples/sound/Sound.i
+	@echo ... SFML/examples/sound/Sound.s
+	@echo ... SFML/examples/voip/Client.obj
+	@echo ... SFML/examples/voip/Client.i
+	@echo ... SFML/examples/voip/Client.s
+	@echo ... SFML/examples/voip/Server.obj
+	@echo ... SFML/examples/voip/Server.i
+	@echo ... SFML/examples/voip/Server.s
+	@echo ... SFML/examples/voip/VoIP.obj
+	@echo ... SFML/examples/voip/VoIP.i
+	@echo ... SFML/examples/voip/VoIP.s
+	@echo ... SFML/examples/win32/Win32.obj
+	@echo ... SFML/examples/win32/Win32.i
+	@echo ... SFML/examples/win32/Win32.s
+	@echo ... SFML/examples/window/Window.obj
+	@echo ... SFML/examples/window/Window.i
+	@echo ... SFML/examples/window/Window.s
+	@echo ... UI/Game.obj
+	@echo ... UI/Game.i
+	@echo ... UI/Game.s
 	@echo ... UI/main.obj
 	@echo ... UI/main.i
 	@echo ... UI/main.s
@@ -484,6 +1036,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
+	$(CMAKE_COMMAND) -P D:\FACULTATE\Facultate\An_2_sem_2\DP_DesignPattern\ProjectX0\DP-XO\cmake-build-debug\CMakeFiles\VerifyGlobs.cmake
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
