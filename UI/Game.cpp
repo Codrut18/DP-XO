@@ -1,8 +1,8 @@
 //
-// Created by Iusaq on 2/27/2023.
+// Created by Iusaq on 3/24/2023.
 //
 
-#include "../Headers/Game.h"
+#include "Game.h"
 
 Player *Game::getPlayer() const {
     return player;
@@ -101,4 +101,8 @@ int Game::checkWinner() {
 
 Computer *Game::getComputer() const {
     return computer;
+}
+
+IGame *IGame::Produce(char playerMark, char computerMark) {
+    return new Game(playerMark,computerMark);
 }

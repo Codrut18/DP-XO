@@ -1,18 +1,14 @@
 //
-// Created by Iusaq on 2/27/2023.
+// Created by Iusaq on 3/24/2023.
 //
 
-#ifndef LOGIC_GAME_H
-#define LOGIC_GAME_H
+#ifndef UI_GAME_H
+#define UI_GAME_H
 
+#include "../Logic/Headers/IGame.h"
 
-#include <memory>
-#include "Player.h"
-#include "Computer.h"
-#include "Board.h"
+class Game : public IGame {
 
-class Game {
-    //Player *player;
     Player *player;
     Computer *computer;
     Board *board;
@@ -48,4 +44,4 @@ public:
 };
 
 
-#endif //LOGIC_GAME_H
+#endif //UI_GAME_H

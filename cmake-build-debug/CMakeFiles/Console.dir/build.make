@@ -92,6 +92,7 @@ Console_EXTERNAL_OBJECTS =
 
 Console.exe: CMakeFiles/Console.dir/Console/main.cpp.obj
 Console.exe: CMakeFiles/Console.dir/build.make
+Console.exe: libLogicLib.dll.a
 Console.exe: CMakeFiles/Console.dir/linklibs.rsp
 Console.exe: CMakeFiles/Console.dir/objects1.rsp
 Console.exe: CMakeFiles/Console.dir/link.txt
