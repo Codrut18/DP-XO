@@ -14,7 +14,7 @@ char Computer::GetMark() const {
     return mark;
 }
 
-std::pair<int, int> Computer::makeMove(int line, int col, Board *board1) {
+std::pair<int, int> Computer::makeMove(Board *board1) {
     auto board = board1->getBoard();
     std::pair<int, int> pozitie;
 
