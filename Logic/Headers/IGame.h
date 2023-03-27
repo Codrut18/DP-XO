@@ -1,5 +1,5 @@
 //
-// Created by Iusaq on 3/24/2023.
+// Created by Vlad on 3/24/2023.
 //
 
 #ifndef UI_IGAME_H

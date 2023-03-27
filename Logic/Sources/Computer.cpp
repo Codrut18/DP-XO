@@ -1,5 +1,5 @@
 //
-// Created by Iusaq on 2/27/2023.
+// Created by Vlad on 2/27/2023.
 //
 
 #include "../Headers/Computer.h"
