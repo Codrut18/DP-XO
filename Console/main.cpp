@@ -1,20 +1,21 @@
 #include <iostream>
-#include "../Logic/Headers/Game.h"
+#include "../Logic/Headers/IGame.h"
 
-void InitMarks(Game *&game) {
+void InitMarks(IGame *&game) {
     bool succes = false;
     char mark;
     while (!succes) {
         std::cout << "Choose you mark (0 / X but only choose X for now):";
         std::cin >> mark;
         if (mark == 'X' || mark == 'x') {
-            game = new Game('X', '0');
+            game = IGame::Produce('X','0');
             game->setIsPlayerTurn(true);
             succes = true;
         } else if (mark == '0') {
-            game = new Game('0', 'X');
-            game->setIsPlayerTurn(false);
-            succes = true;
+//            game = new Game('0', 'X');
+//            game->setIsPlayerTurn(false);
+//            succes = true;
+                std::cout<<"Nu ai voie";
         } else {
             std::cout << "You have to choose between 0 and X\n";
             succes = false;
@@ -36,7 +37,7 @@ void ChoosePosition(int &line, int &column) {
     }
 }
 
-int Play(Game *game) {
+int Play(IGame *game) {
     game->start();
     Board *board = game->getBoard();
     Player *player = game->getPlayer();
@@ -60,7 +61,7 @@ int Play(Game *game) {
     return winner;
 }
 
-void Result(Game *game, int winner) {
+void Result(IGame *game, int winner) {
     switch (winner) {
         case 0: {
             system("CLS");
@@ -87,7 +88,7 @@ void Result(Game *game, int winner) {
 }
 
 int main() {
-    Game *game = nullptr;
+    IGame *game = nullptr;
     InitMarks(game);
     Result(game,Play(game));
     return 0;

@@ -83,6 +83,7 @@ bool Board::positionIsAvailable(int line, int col) {
 
 void Board::PrintBoard() {
     system("CLS");
+    std::cout<<'\n';
     for (int i = 0; i < height; i++) {
         for (int j = 0; j < width; j++) {
             if (board[i][j] == -1)
@@ -94,4 +95,5 @@ void Board::PrintBoard() {
         }
         std::cout<<"\n";
     }
+    std::cout<<'\n';
 }
