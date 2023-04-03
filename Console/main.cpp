@@ -1,6 +1,13 @@
 #include <iostream>
 #include "../Logic/Headers/IGame.h"
 
+
+/**
+ * This function is used in the beginning of the game for establishing which sign the player uses
+ * Whatever sign the player chooses, the computer gets the other one
+ * If the player chooses another sign other than 'X' or '0' he gets an error and has to choose again
+ * @param game represents the instance of the game
+ */
 void InitMarks(IGame *&game) {
     bool succes = false;
     char mark;
@@ -23,12 +30,25 @@ void InitMarks(IGame *&game) {
     }
 }
 
+/**
+ * @brief This function returns True/False depending if the computer is allowed to place a sign on the specified position
+ * @param line represents the line of the checked position
+ * @param column represents the column of the checked position
+ * @return True if the position where the computer places is valid
+ * else False
+ */
 bool IsPositionValid(int line, int column) {
     if (line >= 0 && line < 3 && column >= 0 && column < 3)
         return true;
-    return false;
+    else return false;
+
 }
 
+/**
+ * @brief This function asks the player to place a sign on a position that is available
+ * @param line represents the line where the player wants to place a sign
+ * @param column represents the column where the player wants to place a sign
+ */
 void ChoosePosition(int &line, int &column) {
     //int tempLine, tempColumn;
     while (!IsPositionValid(line, column)) {
@@ -37,6 +57,11 @@ void ChoosePosition(int &line, int &column) {
     }
 }
 
+/**
+ * This is the function in which an instance of the game is called and used to play the game in the console
+ * @param game represents the instance of the game
+ * @return 0 for when the '0' sign wins, 1 when the 'X' sign wins or -1 for a draw
+ */
 int Play(IGame *game) {
     game->start();
     Board *board = game->getBoard();
@@ -61,6 +86,11 @@ int Play(IGame *game) {
     return winner;
 }
 
+/**
+ * @brief This function prints the winner in console
+ * @param game represents the instance of the game
+ * @param winner stores information about who won(0 for '0' sign, 1 for 'X' sign and -1 for draw)
+ */
 void Result(IGame *game, int winner) {
     switch (winner) {
         case 0: {
