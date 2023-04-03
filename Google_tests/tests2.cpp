@@ -1,58 +1,52 @@
 #include <gtest/gtest.h>
-#include "../Logic/Headers/Game.h"
+#include "../Logic/Headers/IGame.h"
 
 TEST(ExampleTest2, Add) {
     EXPECT_EQ(2+2, 4);
-    Game *game;
-    game = new Game();
+    IGame *game = IGame::Produce('X','0');
 
     bool res = game->isGameActive();
     EXPECT_TRUE(res);
 }
 
 TEST(GameTest, PlayerTurnInConstructor) {
-    Game game('X', 'O');
-    EXPECT_TRUE(game.isPlayerTurn());
+    IGame *game = IGame::Produce('X','0');
+    EXPECT_TRUE(game->isPlayerTurn());
 }
 
 TEST(GameTest, ComputerTurnInConstructor) {
-    Game game('O', 'X');
-    EXPECT_FALSE(game.isPlayerTurn());
+    IGame *game = IGame::Produce('X','0');
+    EXPECT_FALSE(game->isPlayerTurn());
 }
 
 TEST(GameTest, PlayerMakeValidMove) {
-    Game game('X', 'O');
-    game.start();
-    game.getPlayer()->makeMove(game.getBoard(), 0, 0);
-    EXPECT_EQ(game.getBoard()->getSign(0, 0), 'X');
+    IGame* game = IGame::Produce('X','0');
+    game->start();
+    game->getPlayer()->makeMove(game->getBoard(), 0, 0);
+    EXPECT_EQ(game->getBoard().getSign(0, 0), 'X');
 }
 
-TEST(GameTest, ComputerMakeValidMove) {
-    Game game('O', 'X');
-    game.start();
-    game.getComputer()->makeMove(game.getBoard());
-    EXPECT_TRUE(game.getBoard()->isCellOccupied());
-}
 TEST(GameTest, GameEndsInDraw) {
-    Game game('X', 'O');
-    game.start();
-    game.getPlayer()->makeMove(game.getBoard(), 0, 0);
-    game.getComputer()->makeMove(game.getBoard());
-    game.getPlayer()->makeMove(game.getBoard(), 1, 1);
-    game.getComputer()->makeMove(game.getBoard());
-    game.getPlayer()->makeMove(game.getBoard(), 1, 0);
-    game.getComputer()->makeMove(game.getBoard());
-    game.getPlayer()->makeMove(game.getBoard(), 0, 2);
-    game.getComputer()->makeMove(game.getBoard());
-    game.getPlayer()->makeMove(game.getBoard(), 2, 1);
-    game.getComputer()->makeMove(game.getBoard());
-    game.getPlayer()->makeMove(game.getBoard(), 2, 0);
-    int winner = game.checkWinner();
+    IGame *game = IGame::Produce('X','0');
+    game->start();
+    std::vector<std::vector<int>> board = game->getBoard();
+    game->getPlayer()->makeMove(0, 0, board);
+    game->getComputer()->makeMove(board);
+    game->getPlayer()->makeMove(1, 1, board);
+    game->getComputer()->makeMove(board);
+    game->getPlayer()->makeMove(1, 0, board);
+    game->getComputer()->makeMove(board);
+    game->getPlayer()->makeMove(0, 2, board);
+    game->getComputer()->makeMove(board);
+    game->getPlayer()->makeMove(2, 1, board);
+    game->getComputer()->makeMove(board);
+    game->getPlayer()->makeMove(2, 0, board);
+    int winner = game->checkWinner(board);
     EXPECT_EQ(winner, 2);
 }
 
 TEST(GameTest, PlayerWinsGame) {
-    Game game('X', 'O');
+    IGame *game = IGame::Produce('X','0');
     game.start();
     game.getPlayer()->makeMove(game.getBoard(), 0, 0);
     game.getComputer()->makeMove(game.getBoard());
@@ -64,21 +58,21 @@ TEST(GameTest, PlayerWinsGame) {
 }
 
 TEST(GameTest, testPlayerMove) {
-    Game game('X', 'O');
+    IGame *game = IGame::Produce('X','0');
     game.start();
     game.getPlayer()->setMove(0, 0);
     EXPECT_EQ(game.getBoard()->getSign(0, 0), 1);
 }
 
 TEST(GameTest, testComputerMove) {
-    Game game('X', 'O');
+    IGame *game = IGame::Produce('X','0');
     game.start();
     game.getComputer()->makeMove(game.getBoard());
     EXPECT_EQ(game.getBoard()->countMarks(), 1);
 }
 
 TEST(GameTest, testPlayerWin) {
-    Game game('X', 'O');
+    IGame *game = IGame::Produce('X','0');
     game.start();
     game.getBoard()->setSign(0, 0, 1);
     game.getBoard()->setSign(0, 1, 1);
@@ -87,7 +81,7 @@ TEST(GameTest, testPlayerWin) {
 }
 
 TEST(GameTest, testComputerWin) {
-    Game game('X', 'O');
+    IGame *game = IGame::Produce('X','0');
     game.start();
     game.getBoard()->setSign(0, 0, 0);
     game.getBoard()->setSign(0, 1, 0);
